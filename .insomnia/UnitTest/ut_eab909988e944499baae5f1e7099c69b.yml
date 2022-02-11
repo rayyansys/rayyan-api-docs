@@ -1,0 +1,10 @@
+_id: ut_eab909988e944499baae5f1e7099c69b
+type: UnitTest
+parentId: uts_85c7a3feee41421da8a58d270422624f
+modified: 1644603723051
+created: 1644603720185
+requestId: req_38e03eef4e8b4310a8ee54a60df870f2
+name: Test Bulk Customize
+code: |-
+  const response1 = await insomnia.send();
+  expect(response1.status).to.equal(200);

@@ -1,0 +1,10 @@
+_id: ut_6b573db208424d758bafff0ed96f2166
+type: UnitTest
+parentId: uts_85c7a3feee41421da8a58d270422624f
+modified: 1644603496098
+created: 1644463498928
+requestId: req_6376c50552f14284a40c130940fba638
+name: Test Get Reviews
+code: |-
+  const response1 = await insomnia.send();
+  expect(response1.status).to.equal(200);

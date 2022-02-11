@@ -1,0 +1,10 @@
+_id: ut_1c423a17c9c94b2bb6438b0a366a2bbc
+type: UnitTest
+parentId: uts_85c7a3feee41421da8a58d270422624f
+modified: 1644603524199
+created: 1644603468709
+requestId: req_00716557ee45449e950caac3cd229a9e
+name: Test Inclusion Counts
+code: |-
+  const response1 = await insomnia.send();
+  expect(response1.status).to.equal(200);

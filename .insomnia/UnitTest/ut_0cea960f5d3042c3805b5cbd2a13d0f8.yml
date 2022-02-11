@@ -1,0 +1,10 @@
+_id: ut_0cea960f5d3042c3805b5cbd2a13d0f8
+type: UnitTest
+parentId: uts_85c7a3feee41421da8a58d270422624f
+modified: 1644603500646
+created: 1644463515293
+requestId: req_94e5d970585843009cc56dacce8a0d94
+name: Test Get Facets
+code: |-
+  const response1 = await insomnia.send();
+  expect(response1.status).to.equal(200);
