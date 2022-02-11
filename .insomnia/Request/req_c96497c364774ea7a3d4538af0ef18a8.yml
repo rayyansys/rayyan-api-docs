@@ -1,0 +1,47 @@
+_id: req_c96497c364774ea7a3d4538af0ef18a8
+type: Request
+parentId: fld_eeb62a531f8441478a6d2f536021400d
+modified: 1644534220018
+created: 1643841355061
+url: "{{ _.base_url }}/api/v1/reviews/{{ _.review_id }}/customizations"
+name: Customizations
+description: ""
+method: GET
+body: {}
+parameters:
+  - id: pair_940d20e35de041c980ae9b8cb0a73db6
+    name: start_id
+    value: "900"
+    description: ""
+    disabled: false
+  - id: pair_b7252fdd65dc47e1b19ff734f4090486
+    name: end_id
+    value: "971"
+    description: ""
+    disabled: false
+  - id: pair_a182bf9a60fe457c9fb2093a6042650d
+    name: types[]
+    value: inclusion_decisions
+    description: ""
+  - id: pair_dc16b5094e16422eb080028608faf76b
+    name: types[]
+    value: labels
+    description: ""
+    disabled: false
+  - id: pair_7a5daaccc5d64f15b211e72406eeb2e4
+    name: types[]
+    value: exclusion_reasons
+    description: ""
+    disabled: false
+headers: []
+authentication:
+  type: bearer
+  token: "{{ _.manual_token }}"
+metaSortKey: -1643841355061
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

@@ -1,0 +1,41 @@
+_id: env_cdb46491d7214bfdb443fd3ae8dd1a95
+type: Environment
+parentId: env_ca2a0e67ca5d3ee95016a78e4afbffff66997588
+modified: 1644533836306
+created: 1644446679512
+name: Staging
+data:
+  base_url: https://staging.rayyan.ai
+  authorization_url: "{{ _.base_url }}/oauth/authorize"
+  access_token_url: "{{ _.base_url }}/oauth/token"
+  client_id: "{% prompt 'Client ID', '', '', 'client_id_staging', false, true %}"
+  client_secret: "{% prompt 'Client Secret', '', '', 'client_secret_staging', true, true %}"
+  redirect_uri: http://localhost/callback
+  review_id: "{% response 'body', 'req_6376c50552f14284a40c130940fba638',
+    'b64::JC5vd25lZF9yZXZpZXdzWzBdLnJheXlhbl9pZA==::46b', 'no-history', 60 %}"
+  collab_review_id: "{% response 'body', 'req_6376c50552f14284a40c130940fba638',
+    'b64::JC5jb2xsYWJfcmV2aWV3c1swXS5yYXl5YW5faWQ=::46b', 'no-history', 60 %}"
+  article1_id: "{% response 'body', 'req_4c2671d88de34e3786a95198a1b3fec3',
+    'b64::JC5hcnRpY2xlc1swXS5yYXl5YW5faWQ=::46b', 'no-history', 60 %}"
+  article2_id: "{% response 'body', 'req_4c2671d88de34e3786a95198a1b3fec3',
+    'b64::JC5hcnRpY2xlc1sxXS5yYXl5YW5faWQ=::46b', 'no-history', 60 %}"
+  article3_id: "{% response 'body', 'req_4c2671d88de34e3786a95198a1b3fec3',
+    'b64::JC5hcnRpY2xlc1syXS5yYXl5YW5faWQ=::46b', 'no-history', 60 %}"
+  manual_token: 5a7291c924ae20c50332faea74e8150279ae14ea2013a921191816b05b58685e
+dataPropertyOrder:
+  "&":
+    - base_url
+    - authorization_url
+    - access_token_url
+    - client_id
+    - client_secret
+    - redirect_uri
+    - review_id
+    - collab_review_id
+    - article1_id
+    - article2_id
+    - article3_id
+    - manual_token
+color: null
+isPrivate: false
+metaSortKey: 1644446679512

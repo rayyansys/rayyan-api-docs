@@ -1,0 +1,27 @@
+_id: req_00716557ee45449e950caac3cd229a9e
+type: Request
+parentId: fld_eeb62a531f8441478a6d2f536021400d
+modified: 1644534214184
+created: 1644533805124
+url: "{{ _.base_url }}/api/v1/reviews/{{ _.review_id }}/inclusion_counts"
+name: Inclusion Counts (Any user)
+description: ""
+method: GET
+body: {}
+parameters:
+  - id: pair_96a5159f1cd64fe9a6fe0d349123de3e
+    name: user_id
+    value: "0"
+    description: ""
+headers: []
+authentication:
+  type: bearer
+  token: "{{ _.manual_token }}"
+metaSortKey: -1643841355038.5
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

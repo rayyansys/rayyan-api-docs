@@ -1,0 +1,28 @@
+_id: req_412e42fc049649b6ab83cc8625266c21
+type: Request
+parentId: fld_eeb62a531f8441478a6d2f536021400d
+modified: 1644534210538
+created: 1643841355058
+url: "{{ _.base_url }}/oauth/revoke"
+name: Revoke Token (No effect)
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: '{"token": "{{ _.manual_token }}"}'
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_e3e4c72cde664c7984b0bc4e270625b8
+authentication:
+  type: bearer
+  token: "{{ _.manual_token }}"
+metaSortKey: -1643841355000
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

@@ -1,0 +1,29 @@
+_id: req_577e6a5c042e4879b26d9a78ba66b4e2
+type: Request
+parentId: fld_eeb62a531f8441478a6d2f536021400d
+modified: 1644534212451
+created: 1643841355057
+url: "{{ _.base_url }}/api/v1/android/verify_purchase"
+name: Verify Purchase (Android)
+description: ""
+method: POST
+body:
+  mimeType: ""
+  text: '{"packageName": "ai.rayyan.mobileapp", "productId": "rynstmnthly",
+    "purchaseToken": "Purchase-Token"}'
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_9ae7b3bc37c848f5974e67ef8e264a1a
+authentication:
+  type: bearer
+  token: "{{ _.manual_token }}"
+metaSortKey: -1643841355025
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

@@ -1,0 +1,29 @@
+_id: req_e3f05b18020b4f47b9b926595e27b9a0
+type: Request
+parentId: fld_eeb62a531f8441478a6d2f536021400d
+modified: 1644534224920
+created: 1643841355061
+url: "{{ _.base_url }}/api/v1/user_info"
+name: User Info
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication:
+  type: oauth2
+  grantType: authorization_code
+  authorizationUrl: "{{ _.authorization_url }}"
+  accessTokenUrl: "{{ _.access_token_url }}"
+  clientId: "{{ _.client_id }}"
+  clientSecret: "{{ _.client_secret }}"
+  redirectUrl: "{{ _.redirect_uri }}"
+  usePkce: false
+metaSortKey: -1643841355114
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

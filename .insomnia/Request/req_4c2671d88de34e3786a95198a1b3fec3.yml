@@ -1,0 +1,31 @@
+_id: req_4c2671d88de34e3786a95198a1b3fec3
+type: Request
+parentId: fld_eeb62a531f8441478a6d2f536021400d
+modified: 1644543799322
+created: 1643841355063
+url: "{{ _.base_url }}/api/v1/reviews/{{ _.review_id }}/results"
+name: Articles
+description: ""
+method: GET
+body: {}
+parameters:
+  - id: pair_a39bb8e1346c43ab8723682d783c8931
+    name: start
+    value: "0"
+    description: ""
+  - id: pair_ff2116e8052e4645bd12b5a261bbeeb3
+    name: length
+    value: "10"
+    description: ""
+headers: []
+authentication:
+  type: bearer
+  token: "{{ _.manual_token }}"
+metaSortKey: -1643841355076.5
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

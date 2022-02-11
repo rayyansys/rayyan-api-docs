@@ -1,0 +1,23 @@
+_id: req_6376c50552f14284a40c130940fba638
+type: Request
+parentId: fld_eeb62a531f8441478a6d2f536021400d
+modified: 1644534223144
+created: 1643841355063
+url: "{{ _.base_url }}/api/v1/reviews"
+name: Reviews
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication:
+  type: bearer
+  token: "{{ _.manual_token }}"
+metaSortKey: -1643841355089
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

@@ -1,0 +1,23 @@
+_id: req_3d57e684145d4dc081a17bf8adc2023f
+type: Request
+parentId: fld_eeb62a531f8441478a6d2f536021400d
+modified: 1644534213176
+created: 1644529159843
+url: "{{ _.base_url }}/api/v1/reviews/{{ _.review_id }}/blind"
+name: Toggle Blind
+description: ""
+method: POST
+body: {}
+parameters: []
+headers: []
+authentication:
+  type: bearer
+  token: "{{ _.manual_token }}"
+metaSortKey: -1643841355034
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

@@ -1,0 +1,107 @@
+_id: req_94e5d970585843009cc56dacce8a0d94
+type: Request
+parentId: fld_eeb62a531f8441478a6d2f536021400d
+modified: 1644534215235
+created: 1643841355064
+url: "{{ _.base_url }}/api/v1/reviews/{{ _.review_id }}/facets"
+name: Facets
+description: ""
+method: GET
+body: {}
+parameters:
+  - name: facets[inclusion_counts]
+    value: "1"
+    id: pair_aec5780bdc134e798139af5271686b23
+    disabled: false
+  - name: facets[decision_counts]
+    value: "1"
+    id: pair_25d0fcc1956c4a52b6e7ef454c77a181
+    disabled: true
+  - name: facets[user_labels]
+    value: "1"
+    id: pair_65704b852e744637938124a268e64bf0
+    disabled: false
+  - name: facets[exclusion_labels]
+    value: "1"
+    id: pair_0074495f80b940d8890e5a00ab17263b
+    disabled: false
+  - name: facets[searches]
+    value: "1"
+    id: pair_e757cbef3aab4103ac1718e035192a34
+    disabled: true
+  - name: facets[exact_matches]
+    value: "1"
+    id: pair_934aefe0429f4bdf9b7599d8d11774f4
+    disabled: true
+  - name: facets[dedup_result]
+    value: "1"
+    id: pair_280dff108207420e98c4f880f2f34bb6
+    disabled: true
+  - name: facets[highlights]
+    value: "1"
+    id: pair_6fd6db71861e412e9ade0bf5e61c408c
+    disabled: true
+  - name: facets[locations]
+    value: "1"
+    id: pair_84b0ced4d11f4f479015df4b71073849
+    disabled: true
+  - name: facets[abstract_languages]
+    value: "1"
+    id: pair_a0a48eb023bc4fcb99b2160bf29eb6b7
+    disabled: true
+  - name: facets[language]
+    value: "1"
+    id: pair_08883898570b4a648cc0d3c08b8ef41b
+    disabled: true
+  - name: facets[journal]
+    value: "1"
+    id: pair_f7bf24b909744817a9ae54e6c4389d8c
+    disabled: true
+  - name: facets[authors]
+    value: "1"
+    id: pair_25acb2c602bc418e9395f427cb236c6e
+    disabled: true
+  - name: facets[year]
+    value: "1"
+    id: pair_d07ef452b8b94e63a79f5a8899e458c5
+    disabled: true
+  - name: facets[publication_types]
+    value: "1"
+    id: pair_00fca1f5a5d14d98a69982e4ce59726c
+    disabled: true
+  - name: facets[keyphrases]
+    value: "1"
+    id: pair_de071459f90043c78b4b9f8de2c02366
+    disabled: true
+  - name: facets[fulltext_types]
+    value: "1"
+    id: pair_aff1b4d55bdc4cc1825a68489f8593da
+    disabled: true
+  - name: facets[pico_control]
+    value: "1"
+    id: pair_c0871d89dcef43dea3219b95df06814e
+    disabled: true
+  - name: facets[pico_intervention]
+    value: "1"
+    id: pair_5704e5301ea34e7c8235ef09428b517e
+    disabled: true
+  - name: facets[pico_outcome]
+    value: "1"
+    id: pair_e7d0893bb7a44f1d86f6971d2e53cc5a
+    disabled: true
+  - name: facets[pico_participants]
+    value: "1"
+    id: pair_65e07ce3af9a46a4b3961c7cb562dc64
+    disabled: true
+headers: []
+authentication:
+  type: bearer
+  token: "{{ _.manual_token }}"
+metaSortKey: -1643841355043
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

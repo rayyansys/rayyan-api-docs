@@ -1,0 +1,29 @@
+_id: req_38e03eef4e8b4310a8ee54a60df870f2
+type: Request
+parentId: fld_eeb62a531f8441478a6d2f536021400d
+modified: 1644534221246
+created: 1643841355056
+url: "{{ _.base_url }}/api/v1/reviews/{{ _.review_id }}/customize"
+name: Bulk Customize
+description: ""
+method: POST
+body:
+  mimeType: ""
+  text: '{"article_ids": "{{ _.article2_id }},{{ _.article3_id }}", "key":
+    "included", "value": -1}'
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_7e3d734b819a4ac7a6503e8c5949ef89
+authentication:
+  type: bearer
+  token: "{{ _.manual_token }}"
+metaSortKey: -1643841355061.75
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
