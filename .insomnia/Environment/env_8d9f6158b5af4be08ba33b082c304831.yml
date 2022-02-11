@@ -1,0 +1,22 @@
+_id: env_8d9f6158b5af4be08ba33b082c304831
+type: Environment
+parentId: env_ca2a0e67ca5d3ee95016a78e4afbffff66997588
+modified: 1644601133186
+created: 1644600095957
+name: Development
+data:
+  base_url: http://rayyan-dev:30080
+  redirect_uri: http://localhost/callback
+  client_id: "{% prompt 'Client ID', '', '', 'client_id_dev', false, true %}"
+  client_secret: "{% prompt 'Client Secret', '', '', 'client_secret_dev', true, true %}"
+  manual_token: d75b85799575c4ca187afbca794f7f3d8fb35a71386682b2cd1dd22fdd55169d
+dataPropertyOrder:
+  "&":
+    - base_url
+    - redirect_uri
+    - client_id
+    - client_secret
+    - manual_token
+color: null
+isPrivate: false
+metaSortKey: 0

@@ -1,0 +1,22 @@
+_id: env_c9a2956ccf214b7ba9202e2098bd9d94
+type: Environment
+parentId: env_ca2a0e67ca5d3ee95016a78e4afbffff66997588
+modified: 1644601124554
+created: 1644600229475
+name: Production
+data:
+  base_url: https://rayyan.ai
+  redirect_uri: http://localhost/callback
+  client_id: "{% prompt 'Client ID', '', '', 'client_id_prod', false, true %}"
+  client_secret: "{% prompt 'Client Secret', '', '', 'client_secret_prod', true, true %}"
+  manual_token: ""
+dataPropertyOrder:
+  "&":
+    - base_url
+    - redirect_uri
+    - client_id
+    - client_secret
+    - manual_token
+color: null
+isPrivate: false
+metaSortKey: 2
