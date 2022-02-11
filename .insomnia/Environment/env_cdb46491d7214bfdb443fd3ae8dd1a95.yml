@@ -1,7 +1,7 @@
 _id: env_cdb46491d7214bfdb443fd3ae8dd1a95
 type: Environment
 parentId: env_ca2a0e67ca5d3ee95016a78e4afbffff66997588
-modified: 1644601129676
+modified: 1644603278160
 created: 1644446679512
 name: Staging
 data:
@@ -9,14 +9,12 @@ data:
   redirect_uri: http://localhost/callback
   client_id: "{% prompt 'Client ID', '', '', 'client_id_staging', false, true %}"
   client_secret: "{% prompt 'Client Secret', '', '', 'client_secret_staging', true, true %}"
-  manual_token: 4ae2e77964670081380a83c7f2e54203f3c35b3b4f8f94e486eca04b5d06435d
 dataPropertyOrder:
   "&":
     - base_url
     - redirect_uri
     - client_id
     - client_secret
-    - manual_token
 color: null
 isPrivate: false
 metaSortKey: 1
