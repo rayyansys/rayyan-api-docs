@@ -1,7 +1,7 @@
 _id: req_c96497c364774ea7a3d4538af0ef18a8
 type: Request
 parentId: fld_eeb62a531f8441478a6d2f536021400d
-modified: 1644534220018
+modified: 1644600917387
 created: 1643841355061
 url: "{{ _.base_url }}/api/v1/reviews/{{ _.review_id }}/customizations"
 name: Customizations
@@ -11,14 +11,15 @@ body: {}
 parameters:
   - id: pair_940d20e35de041c980ae9b8cb0a73db6
     name: start_id
-    value: "900"
+    value: "{% response 'body', 'req_900b7135ab944d7a941f99c6a219af6b',
+      'b64::JC5jdXN0b21pemF0aW9uX2lkc1swXQ==::46b', 'no-history', 60 %}"
     description: ""
     disabled: false
   - id: pair_b7252fdd65dc47e1b19ff734f4090486
     name: end_id
-    value: "971"
+    value: "1000"
     description: ""
-    disabled: false
+    disabled: true
   - id: pair_a182bf9a60fe457c9fb2093a6042650d
     name: types[]
     value: inclusion_decisions

@@ -1,7 +1,7 @@
 _id: req_900b7135ab944d7a941f99c6a219af6b
 type: Request
 parentId: fld_eeb62a531f8441478a6d2f536021400d
-modified: 1644534221671
+modified: 1644600826456
 created: 1643841355057
 url: "{{ _.base_url }}/api/v1/reviews/{{ _.review_id }}/customize"
 name: Customize
@@ -9,7 +9,8 @@ description: ""
 method: POST
 body:
   mimeType: application/json
-  text: '{"article_id": {{ _.article1_id }}, "plan": {"included": 1}}'
+  text: '{"article_id": {{ _.article1_id }}, "plan": {"included": -1, "label1": 1,
+    "__EXR__reason1": 1}}'
 parameters: []
 headers:
   - name: Content-Type
