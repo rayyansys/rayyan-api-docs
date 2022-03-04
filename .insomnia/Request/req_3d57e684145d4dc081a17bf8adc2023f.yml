@@ -1,11 +1,15 @@
 _id: req_3d57e684145d4dc081a17bf8adc2023f
 type: Request
 parentId: fld_eeb62a531f8441478a6d2f536021400d
-modified: 1644534213176
+modified: 1646419315698
 created: 1644529159843
 url: "{{ _.base_url }}/api/v1/reviews/{{ _.review_id }}/blind"
 name: Toggle Blind
-description: ""
+description: >-
+  This toggles the blind mode from on to off or vice versa. The returned value
+  is the new blind mode.
+
+  Only the review owner can toggle the blind mode.
 method: POST
 body: {}
 parameters: []
@@ -15,8 +19,8 @@ authentication:
   token: "{{ _.manual_token }}"
 metaSortKey: -1643841355034
 isPrivate: false
-settingStoreCookies: true
-settingSendCookies: true
+settingStoreCookies: false
+settingSendCookies: false
 settingDisableRenderRequestBody: false
 settingEncodeUrl: true
 settingRebuildPath: true

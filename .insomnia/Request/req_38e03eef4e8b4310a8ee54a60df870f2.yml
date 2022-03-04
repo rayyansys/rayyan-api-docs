@@ -1,11 +1,46 @@
 _id: req_38e03eef4e8b4310a8ee54a60df870f2
 type: Request
 parentId: fld_eeb62a531f8441478a6d2f536021400d
-modified: 1644600851568
+modified: 1646347583848
 created: 1643841355056
 url: "{{ _.base_url }}/api/v1/reviews/{{ _.review_id }}/customize"
 name: Bulk Customize
-description: ""
+description: >
+  Customizations are made to review articles using this endpoint in two forms.
+
+
+  The review to be customized can be specified in the URL itself, eg:
+
+  `/reviews/32/customize` for making customizations to the review with id=32.
+
+
+  The actual customization itself is specified in the POST body.
+
+  This is the second form of customization.
+
+
+  ## Using a single key and value for multiple articles
+
+
+  This way can be used to create the same type of customization for multiple articles.
+
+
+  Here, the POST body is structured as follows:
+
+
+  ```json
+
+  {
+    key:         // <String> The type of customization to be made.
+    value:       // <Integer> The value of the customization type. Dependent on the key.
+    article_ids: // <String> A CSV of ids of the articles to be customized with the above
+                 // customization type and value.
+  }
+
+  ```
+
+
+  Keys, values and response body follow the same syntax described in the first form of customization (single article).
 method: POST
 body:
   mimeType: ""
@@ -21,8 +56,8 @@ authentication:
   token: "{{ _.manual_token }}"
 metaSortKey: -1643841355061.75
 isPrivate: false
-settingStoreCookies: true
-settingSendCookies: true
+settingStoreCookies: false
+settingSendCookies: false
 settingDisableRenderRequestBody: false
 settingEncodeUrl: true
 settingRebuildPath: true

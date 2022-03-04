@@ -1,11 +1,32 @@
 _id: req_577e6a5c042e4879b26d9a78ba66b4e2
 type: Request
 parentId: fld_eeb62a531f8441478a6d2f536021400d
-modified: 1644534212451
+modified: 1646419325701
 created: 1643841355057
 url: "{{ _.base_url }}/api/v1/android/verify_purchase"
 name: Verify Purchase (Android)
-description: ""
+description: >
+  The endpoint takes in `packageName`, `productId`, and `purchaseToken` in the
+  POST body.
+
+
+  Eg:
+
+  ```
+
+  {
+     packageName: 'ai.rayyan.mobileapp'
+     productId: 'ai.rayyan.mobileapp.rynpro',
+     purchaseToken: 'kmigoi4YuSQtU8U'
+  }
+
+  ```
+
+
+  Before verifying the purchase, the endpoint will ensure that if the corresponding subscription is already known, whereas it is linked to an existing Rayyan user, the user calling the endpoint should be the same one. If a different user is attempting to verify the purchase, the endpoint returns 400 status.
+
+
+  This data is then sent to the GooglePlay servers for validation, and if successful, the endpoint returns a 200 status. 
 method: POST
 body:
   mimeType: ""
@@ -21,8 +42,8 @@ authentication:
   token: "{{ _.manual_token }}"
 metaSortKey: -1643841355025
 isPrivate: false
-settingStoreCookies: true
-settingSendCookies: true
+settingStoreCookies: false
+settingSendCookies: false
 settingDisableRenderRequestBody: false
 settingEncodeUrl: true
 settingRebuildPath: true

@@ -1,11 +1,26 @@
 _id: req_6376c50552f14284a40c130940fba638
 type: Request
 parentId: fld_eeb62a531f8441478a6d2f536021400d
-modified: 1644534223144
+modified: 1646344342440
 created: 1643841355063
 url: "{{ _.base_url }}/api/v1/reviews"
 name: Reviews
-description: ""
+description: >
+  This endpoint lists all active (not archived) reviews the logged in user has
+  write access to. In this sense, it lists the following:
+
+  1. `owned_reviews`: owned reviews
+
+  1. `collab_reviews`: collaboration reviews
+
+
+  All review fields are straightforward to understand. There are three fields that worth explaining. Clients should keep track of changes in the values of these fields and take appropriate action if any one changes:
+
+  1. `articles_etag`: It changes whenever a user adds new articles or removes articles from the review (does not apply to marking articles as duplicates). Clients should clear the cached copy of all articles and ask the user to download the review articles again.
+
+  1. `inclusions_etag`: It changes whenever a user adds a decision to any article (include/exclude/maybe). Clients should invalidate the inclusion counts facet if stored locally, or refresh it if it is displayed on screen. They should also trigger the customizations sync workflow if not done already on receiving the push message
+
+  1. `labels_etag`: Same as above but for user labels and exclusion reasons. It applies to the user labels or exclusion reasons facets
 method: GET
 body: {}
 parameters: []
@@ -15,8 +30,8 @@ authentication:
   token: "{{ _.manual_token }}"
 metaSortKey: -1643841355089
 isPrivate: false
-settingStoreCookies: true
-settingSendCookies: true
+settingStoreCookies: false
+settingSendCookies: false
 settingDisableRenderRequestBody: false
 settingEncodeUrl: true
 settingRebuildPath: true

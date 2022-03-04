@@ -1,11 +1,19 @@
 _id: req_00716557ee45449e950caac3cd229a9e
 type: Request
 parentId: fld_eeb62a531f8441478a6d2f536021400d
-modified: 1644534214184
+modified: 1646419137040
 created: 1644533805124
 url: "{{ _.base_url }}/api/v1/reviews/{{ _.review_id }}/inclusion_counts"
 name: Inclusion Counts (Any user)
-description: ""
+description: >-
+  This endpoint is very similar to the Facets endpoint with the facet key
+  `inclusion_counts` selected in the query. The only difference is that this
+  endpoint is useful when retrieving inclusion counts for other users in the
+  same review, even if the blind mode is on. An example application to this is
+  to display a chart of progress for each user without toggling the blind mode
+  to off.
+
+  A special `user_id` of `0` returns the "agreed on" decisions for all users in the review. It matches the results returned from the Facets endpoint when the blind mode is off.
 method: GET
 body: {}
 parameters:
@@ -17,10 +25,10 @@ headers: []
 authentication:
   type: bearer
   token: "{{ _.manual_token }}"
-metaSortKey: -1643841355038.5
+metaSortKey: -1643841355041.875
 isPrivate: false
-settingStoreCookies: true
-settingSendCookies: true
+settingStoreCookies: false
+settingSendCookies: false
 settingDisableRenderRequestBody: false
 settingEncodeUrl: true
 settingRebuildPath: true

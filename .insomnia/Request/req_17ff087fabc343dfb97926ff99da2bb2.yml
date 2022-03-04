@@ -1,11 +1,12 @@
 _id: req_17ff087fabc343dfb97926ff99da2bb2
 type: Request
 parentId: fld_eeb62a531f8441478a6d2f536021400d
-modified: 1644534223787
+modified: 1646343237671
 created: 1644534087579
 url: "{{ _.base_url }}/api/v1/test"
 name: Test
-description: ""
+description: This is a simple endpoint that returns success if the API server is
+  available and the authentication is valid.
 method: GET
 body: {}
 parameters: []
@@ -15,8 +16,8 @@ authentication:
   token: "{{ _.manual_token }}"
 metaSortKey: -1643841355101.5
 isPrivate: false
-settingStoreCookies: true
-settingSendCookies: true
+settingStoreCookies: false
+settingSendCookies: false
 settingDisableRenderRequestBody: false
 settingEncodeUrl: true
 settingRebuildPath: true

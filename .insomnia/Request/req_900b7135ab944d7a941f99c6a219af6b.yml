@@ -1,11 +1,83 @@
 _id: req_900b7135ab944d7a941f99c6a219af6b
 type: Request
 parentId: fld_eeb62a531f8441478a6d2f536021400d
-modified: 1644600826456
+modified: 1646347531432
 created: 1643841355057
 url: "{{ _.base_url }}/api/v1/reviews/{{ _.review_id }}/customize"
 name: Customize
-description: ""
+description: >-
+  Customizations are made to review articles using this endpoint in two forms.
+
+
+  The review to be customized can be specified in the URL itself, eg:
+
+  `/reviews/32/customize` for making customizations to the review with id=32.
+
+
+  The actual customization itself is specified in the POST body.
+
+  This is the first form of customization.
+
+
+  ## Using a customization plan with multiple keys and values for a single article
+
+
+  This way can be used to create multiple customizations for a single article.
+
+
+  Here, the POST body is structured as follows:
+
+
+  ```json
+
+  {
+    plan: // <Hash> The plan of customizations to be made on the article.
+    article_id: // <Integer> The id of the article to apply the plan on.
+  }
+
+  ```
+
+
+  A plan is a hash with multiple keys and values denoting types of customizations to be made to 
+
+  the article. Details on the various customization types and their keys and values are provided next.
+
+
+  ### Customization types
+
+
+  The following describes the various types of customizations and their keys and values:
+
+
+  * __Inclusion decisions__:
+
+    `key` is always `"included"`.
+
+    `value` is `1` if inclusion, `-1` if exclusion, and `0` if maybe.
+
+  * __Labels__:
+
+    `key` is the label itself, eg: `"Relevant study"` or `"Matches previous article"`.
+
+    `value` is `1` for adding a label, and `-1` for removing a label.
+
+  * __Exclusion Reasons__
+
+    `key` is the reason itself, prefixed with `__EXR__`, for eg: `"__EXR__wrong outcome"` or `"__EXR__wrong drug"`.
+
+    `value` is `1` for adding a reason, and `-1` for removing a reason.
+
+  Once a customization request has succeeded, the response returns an array of the
+
+  ids of the customizations that were committed to the database. Normally, an id
+
+  is returned for each customization made to each article in `article_ids`. However, an
+
+  exclusion label is actually 2 customizations, one for the exclusion decision
+
+  made to the article and one for the label itself. In this case, 2 ids will
+
+  be returned for each article in `article_ids`.
 method: POST
 body:
   mimeType: application/json
@@ -21,8 +93,8 @@ authentication:
   token: "{{ _.manual_token }}"
 metaSortKey: -1643841355062.5
 isPrivate: false
-settingStoreCookies: true
-settingSendCookies: true
+settingStoreCookies: false
+settingSendCookies: false
 settingDisableRenderRequestBody: false
 settingEncodeUrl: true
 settingRebuildPath: true

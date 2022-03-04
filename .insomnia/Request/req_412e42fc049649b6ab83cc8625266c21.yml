@@ -1,7 +1,7 @@
 _id: req_412e42fc049649b6ab83cc8625266c21
 type: Request
 parentId: fld_eeb62a531f8441478a6d2f536021400d
-modified: 1644534210538
+modified: 1646419331536
 created: 1643841355058
 url: "{{ _.base_url }}/oauth/revoke"
 name: Revoke Token (No effect)
@@ -20,8 +20,8 @@ authentication:
   token: "{{ _.manual_token }}"
 metaSortKey: -1643841355000
 isPrivate: false
-settingStoreCookies: true
-settingSendCookies: true
+settingStoreCookies: false
+settingSendCookies: false
 settingDisableRenderRequestBody: false
 settingEncodeUrl: true
 settingRebuildPath: true

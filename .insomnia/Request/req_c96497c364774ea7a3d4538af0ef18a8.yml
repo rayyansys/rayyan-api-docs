@@ -1,11 +1,92 @@
 _id: req_c96497c364774ea7a3d4538af0ef18a8
 type: Request
 parentId: fld_eeb62a531f8441478a6d2f536021400d
-modified: 1644600917387
+modified: 1646409324631
 created: 1643841355061
 url: "{{ _.base_url }}/api/v1/reviews/{{ _.review_id }}/customizations"
 name: Customizations
-description: ""
+description: >
+  Customizations that are committed to the database can be retrieved using the
+  ids
+
+  returned from the `POST /customize` endpoint.
+
+
+  The `GET /customizations` endpoint takes in three query parameters, `start_id`,
+
+  `end_id` and `types`. 
+
+
+  The first two parameters can be used to extract all customizations with ids in
+
+  the range of `start_id` and `end_id`, inclusive of `end_id`. Note that omitting the `start_id`
+
+  will fetch all customizations from the first and omitting the `end_id` will fetch all
+
+  customizations till the last. Both can be omitted to fetch all customizations in the review. 
+
+
+  Note that the endpoint always returns a maximum of 100 customizations, regardless of the 
+
+  length of the actual range provided. For eg, if `start_id=100` and `end_id=300`, only the 
+
+  first 100 customizations starting with id=100 and ending with id=199 are returned. Also, the ids of the 
+
+  returned customizations are not guaranteed to be in one contiguous order, there may be gaps in them.
+
+  It is up to the client to retrieve the remaining customizations by calling the endpoint 
+
+  again with `start_id=200` and `end_id=300`, handling any gaps that may be encountered. 
+
+
+  Also note that depending on the blind mode of the review, this endpoint will return customizations
+
+  selectively. If blind mode is on, only customizations for the current user will be returned; if blind mode is off, customizations for all users will be returned.
+
+
+  The third parameter, `types`, is used to select the types of customizations returned. 
+
+  This parameter is an array of values containing the type of customizations the client wants 
+
+  (multiple types can be passed in). __Note that the `types` parameter is mandatory__.
+
+
+  The supported types are:
+
+
+  * `inclusion_decisions` 
+
+  * `labels`
+
+  * `exclusion_reasons`
+
+
+  For eg, 
+
+  ```
+
+  GET /reviews/32/customizations?start_id=10&end_id=20&types[]=inclusion_decisions&types[]=labels&types[]=exclusion_reasons
+
+  ``` 
+
+  retrieves all inclusion_decisions, labels and exclusion reasons starting from id=10 till id=20, inclusive of 20. 
+
+
+  The responses are returned in an Array, and each object in the Array has the following structure:
+
+
+  ```json
+
+  {
+    _id: // Id of the customization.
+    created_at: // The timestamp at which the customization was committed to the DB.
+    user_id: // The id of user that made the customization.
+    article_id: // The id of the article the customization was made on.
+    key: // The type of customization, see details on keys above.
+    value: // The value of the customization, see details on values above.
+  }
+
+  ```
 method: GET
 body: {}
 parameters:
@@ -40,8 +121,8 @@ authentication:
   token: "{{ _.manual_token }}"
 metaSortKey: -1643841355061
 isPrivate: false
-settingStoreCookies: true
-settingSendCookies: true
+settingStoreCookies: false
+settingSendCookies: false
 settingDisableRenderRequestBody: false
 settingEncodeUrl: true
 settingRebuildPath: true

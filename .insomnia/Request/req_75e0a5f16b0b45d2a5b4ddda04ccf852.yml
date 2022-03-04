@@ -1,11 +1,35 @@
 _id: req_75e0a5f16b0b45d2a5b4ddda04ccf852
 type: Request
 parentId: fld_eeb62a531f8441478a6d2f536021400d
-modified: 1644534211419
+modified: 1646419329508
 created: 1644532784996
 url: "{{ _.base_url }}/api/v1/ios/verify_purchase"
 name: Verify Purchase (iOS)
-description: ""
+description: >-
+  The endpoint takes in the base64-encoded `receipt` data in the POST body.
+
+
+  Eg:
+
+  ```
+
+  {
+     receipt: "aGVyZSBpcyBhIHNlY3JldA=="
+  }
+
+  ```
+
+
+  Before verifying the receipt, the endpoint will ensure that if the corresponding subscription is already known, whereas it is linked to an existing Rayyan user, the user calling the endpoint should be the same one. If a different user is attempting to verify the receipt, the endpoint returns 400 status.
+
+
+  This data is then sent to the AppStore servers for validation, which in turn returns the decoded and decrypted receipt with a status code as documented [here](https://developer.apple.com/documentation/appstorereceipts/status). If successful (status code returned is zero), the endpoint returns a 200 status. 
+
+
+  If the status code returned by the AppStore servers is either 21002, 21003, 21006 or 21010, the endpoint returns a 400 status.
+
+
+  For any other non-zero status codes returned by the AppStore servers, the endpoint returns a 500 status.
 method: POST
 body:
   mimeType: ""
@@ -21,8 +45,8 @@ authentication:
   token: "{{ _.manual_token }}"
 metaSortKey: -1643841355012.5
 isPrivate: false
-settingStoreCookies: true
-settingSendCookies: true
+settingStoreCookies: false
+settingSendCookies: false
 settingDisableRenderRequestBody: false
 settingEncodeUrl: true
 settingRebuildPath: true

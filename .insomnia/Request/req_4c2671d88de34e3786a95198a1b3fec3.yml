@@ -1,11 +1,136 @@
 _id: req_4c2671d88de34e3786a95198a1b3fec3
 type: Request
 parentId: fld_eeb62a531f8441478a6d2f536021400d
-modified: 1644543799322
+modified: 1646345547539
 created: 1643841355063
-url: "{{ _.base_url }}/api/v1/reviews/{{ _.review_id }}/results"
+url: "{{ _.base_url }}/api/v1/reviews/{{ _.review_id }}/articles"
 name: Articles
-description: ""
+description: >
+  This endpoint takes two query string parameters:
+
+  1. `start`: Position of first article to return (0-based)
+
+  1. `length`: Maximum count of requested articles.
+
+  Note that articles are always sorted by their `rayyan_id`.
+
+
+  It returns a list of article objects for a particular review.
+
+
+  The article objects returned in the response are as below:
+
+
+
+  ```json
+
+  {
+    title:              // <String> The title of the article
+    rayyan_id:          // <Integer> The id of the article used internally by Rayyan
+    citation:           // <String> The venue of the article, i.e. which journal,
+                        //          volume and issue.
+    date:               // <String> The date at which the article is published, eg: '2018-10-11'.
+    full_abstract:      // <String> All the abstracts belonging to the article
+                        //          concatenated together.
+    authors:            // <Array|String> The authors of the article. Can be an Array
+                        //                or String. If the value is a String, the
+                        //                authors are separated by a semi-colon (;).
+    topics:             // <Array|String> The keywords related to the article. Can be
+                        //                Array or String. If the value is a String,
+                        //                the topics are separated by a vertical bar (|).
+    search_ids:         // <Array> The ids of the searches that contain this article.
+    dedup_results:      // <Hash> A Hash that describes the dedup results for the article.
+    fulltexts:          // <Array> An Array of Hashes that describe the fulltexts for the article.
+    language:           // <String> The language of the article.
+    locations:          // <Array> An Array containing the locations pertaining to the article.
+    publication_types:  // <Array> An Array of publication types for the article.
+    year:               // <Integer> The year in which the article was published.
+    abstract_languages  // <Array> An Array of languages that the article abstracts can have.
+  }
+
+  ```
+
+
+  The structure of the `dedup_results` and `fulltexts` field can be inferred from the example below.
+
+
+  Note that the length of the `search_ids` Array can be used to determine the value for
+
+  the "Automatically Deduplicated" facet. For eg, if the Array has 3 elements, then this
+
+  article has 3 exact matches.
+
+
+  **IMPORTANT**:
+
+
+  `authors` and `topics` above can either be an Array or String due to backward-compatibility
+
+  requirements. The app should handle cases where these fields can be either (i.e. check the
+
+  type of the value and then process accordingly).
+
+
+  ## Examples
+
+
+  The following is an example of an article object. Note that the endpoint actually returns
+
+  a list of these objects.
+
+
+  ```json
+
+  {
+      "title":"Chronic pain and psychiatric illness managing comorbid conditions",
+      "rayyan_id":123304,
+      "citation":"Current Psychiatry - Volume 15, Issue 2, pp. 26-33 - published 2016-01-01",
+      "date": "18-05-2021",
+      "full_abstract":"Perferendis hic rem itaque sit unde officia accusantium deserunt expedita quo qui pariatur enim sequi in
+        incidunt voluptas dolorem soluta reiciendis iure neque temporibus sed qui a ea ea modi et voluptatem molestiae aliquid ut
+        possimus laborum voluptate velit dolores est mollitia aliquam quia quis reprehenderit dolor consequatur explicabo sunt esse
+        accusamus sint dolore sed et placeat veniam nisi eaque aut architecto impedit at quia rerum odit eum quis dolor et officiis
+        id beatae qui facere inventore illo id iste eos alias nihil et quam quidem vel ut quisquam deleniti sed et labore voluptas
+        quod occaecati et suscipit dolorem nesciunt odio perspiciatis et consequatur animi ut.",
+      "authors":"Wissel, J.; Entner, T.",
+      "topics":"Botulinum Toxins | Botulinum Toxins, Type A | Multiple Sclerosis | Muscle Spasticity",
+      "search_ids":[
+        1
+      ],
+      "dedup_results":{
+        "score":0.5,
+        "article_id":123304,
+        "cluster_id":1,
+        "user_action":0,
+        "dedup_job_id":1
+      },
+      "fulltexts":[
+        {
+          "id":3,
+          "source":{
+            "id":20,
+            "name":"health-article.pdf",
+            "public":false
+          },
+          "user_id":2,
+          "review_id":9,
+          "source_id":20,
+          "article_id":123304,
+          "created_at":"2021-10-28 17:54:05 UTC",
+          "updated_at":"2021-10-28 17:54:05 UTC",
+          "marked_as_deleted":null
+        }
+      ],
+      "language": "English",
+      "locations":["Paris"],
+      "publication_types": ["Journal Article"],
+      "year":2021,
+      "abstract_languages":[
+        "English"
+      ]
+  }
+
+  ```
 method: GET
 body: {}
 parameters:
@@ -23,8 +148,8 @@ authentication:
   token: "{{ _.manual_token }}"
 metaSortKey: -1643841355076.5
 isPrivate: false
-settingStoreCookies: true
-settingSendCookies: true
+settingStoreCookies: false
+settingSendCookies: false
 settingDisableRenderRequestBody: false
 settingEncodeUrl: true
 settingRebuildPath: true

@@ -1,0 +1,24 @@
+_id: req_d0b3a023eab34c8a9e38316a4d83de8c
+type: Request
+parentId: fld_eeb62a531f8441478a6d2f536021400d
+modified: 1646419323190
+created: 1644948794200
+url: "{{ _.base_url }}/api/v1/reviews/{{ _.collab_review_id }}/blind"
+name: Toggle Blind (Access denied)
+description: This endpoint is to test toggling blind mode for a review that the
+  signed in user does not own. It should always return 403 Forbidden.
+method: POST
+body: {}
+parameters: []
+headers: []
+authentication:
+  type: bearer
+  token: "{{ _.manual_token }}"
+metaSortKey: -1643841355029.5
+isPrivate: false
+settingStoreCookies: false
+settingSendCookies: false
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

@@ -1,11 +1,15 @@
 _id: req_e3f05b18020b4f47b9b926595e27b9a0
 type: Request
 parentId: fld_eeb62a531f8441478a6d2f536021400d
-modified: 1644603596118
+modified: 1646419333595
 created: 1643841355061
 url: "{{ _.base_url }}/api/v1/user_info"
 name: Log In and User Info
-description: ""
+description: This endpoint lists user information. It also acts as OAuth2
+  workflow token generator. Make sure to call it anytime you start receiving 401
+  errors. It will initially load the Rayyan sign in window then automatically
+  refresh the access token if it had expired. If you change environments, you
+  must clear the refresh token, the OAuth2 session and run this endpoint again.
 method: GET
 body: {}
 parameters: []
@@ -21,8 +25,8 @@ authentication:
   usePkce: false
 metaSortKey: -1643841355114
 isPrivate: false
-settingStoreCookies: true
-settingSendCookies: true
+settingStoreCookies: false
+settingSendCookies: false
 settingDisableRenderRequestBody: false
 settingEncodeUrl: true
 settingRebuildPath: true

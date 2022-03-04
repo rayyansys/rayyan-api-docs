@@ -1,11 +1,95 @@
 _id: req_94e5d970585843009cc56dacce8a0d94
 type: Request
 parentId: fld_eeb62a531f8441478a6d2f536021400d
-modified: 1644534215235
+modified: 1646419128096
 created: 1643841355064
 url: "{{ _.base_url }}/api/v1/reviews/{{ _.review_id }}/facets"
 name: Facets
-description: ""
+description: >
+  ## Common format
+
+  This endpoint is responsible for returning aggregate data about articles in the review. For example, it returns total number of articles grouped by undecided/included/excluded/maybe/conflict decisions.
+
+
+  You can configure the query parameters to return one or more of the facets (groups).
+
+  The majority of returned facets have 3 components:
+
+  1. `collection`: Array of facet matches, up to 10 matches. Each item is an array of 3 items: code, display and count. Currently the code matches the display and it represents what should be displayed to the user. The count is the number of matching articles in the review that have the attribute denoted by the facet code.
+
+  1. `more`: Array of facet matches starting after the matches in the `collection` and up to 20 matches. It has the same format of the `collection` array.
+
+  1. `has_evenmore`: Whether there are more matches that are not returned above or not. If there are more matches, an additional call should be done to retrieve up to 70 matches. This endpoint is currently not available for API clients.
+
+
+  Based on the above, the maximum number of matches that can be returned in this endpoint is 30.
+
+
+  This endpoint is optimized to cache the data whenever possible. If you receive an empty response, this means that the up-to-date data is not avaiable in the cache and it is being computed in the background. Although, you can repeatedly call the endpoint again until you get results, but this is not recommended and may deplete your API quota. The recommended way is to subscribe to the Pusher channel for that review and listen to the event 
+
+
+  In the following facets, `more` is always empty and `has_evenmore` is always `false`.
+
+
+  ### Inclusion counts
+
+  Facet key: `inclusion_counts`. The `collection` in the response is a map of standard keys and counts, rather than an array. The standard keys are the following:
+
+  - `undecided`: Number of undecided articles by the signed in user if review blind mode is on, or by all users if blind mode is off
+
+  - `maybe`: Number of articles that has the maybe decision by the signed in user if review blind mode is on, or by any user if blind mode is off
+
+  - `included`: Number of included articles by the signed in user if review blind mode is on, or that have an agreement on inclusion by all users that have a decision on matching articles if blind mode is off
+
+  - `excluded`: Number of excluded articles by the signed in user if review blind mode is on, or that have an agreement on exclusion by all users that have a decision on matching articles if blind mode is off
+
+  - `conflict`: Only returned when the review blind mode is off and denotes number of articles that have conflicting decisions (include and exclude) by two or more users.
+
+
+  ### Decision counts
+
+  Facet key: `decision_counts`. In the `collection` response, the first item for every item can either be `at_least` or `at_most`. The second item is always a non-negative number. This denotes number of matching articles that have been customized by at least/at most N users where N is the number in the second item. This facet is useful when the blind mode is on to identify which articles to work on based on the customization activity of other users.
+
+
+  ### User labels and exclusion reasons
+
+  Facet key: `all_labels`. This response will be returned if either `user_labels` or `exclusion_reasons` is requested in the query parameters. It returns a flat list containing both types in the `collection` array. If a code/display starts with `__EXR___` prefix then it is an exclusion reason. Otherwise, it is a user label. Clients should separate this flat list or show the reasons differently after removing the prefix.
+
+
+  ### Auto-deduplicated
+
+  Facet key: `exact_matches`. The code/display in the response are always numbers starting from 102 and typically have the value of 100 plus a number. This number denotes the number of exact matches. For example, 102 with count of 5 means there are 5 articles in the review that have exactly 2 exact matches, each. This could result from a user uploading the same file twice where that file had 5 articles. 103 means 3 exact matches, and so on.
+
+
+  ### Possible duplicates
+
+  Facet key: `dedup_result`. The code/display in the response has four allowed values:
+
+  - `0`: unresolved duplicate matches. These are organized in clusters of possible duplicates.
+
+  - `1`: matches that have been marked as duplicates by any user
+
+  - `2`: matches that have been marked as non-duplicates by any user
+
+  - `3`: matches that result from a user marking all other articles in the same cluster as either duplicates or non-duplicates.
+
+
+  Normally, this facet response will be initially all zeros, until a user triggers the duplicate detection job on the web interface. If succeeds, all possible results will be included in the unresolved category above. Each time a user resolves a possible duplicate from the web, this facet data will be updated.
+
+
+  ## Other formats
+
+  The rest of the facets have different formats as explained below:
+
+
+  ### Searches
+
+  Facet key: `searches`. Response is an array of objects representing each file (or review copy) uploaded by users (or copied from other reviews). The `total` for each object is the number of identified articles in that file (or copy) regardless of duplicates within the same file or across multiple files. It does not change either when users mark articles as duplicates. This nunmber should match the `fetched` field unless there are invalid results in the file that could not be parsed where the total of `fetched` plus `invalid_results` should equal to the `total` field.
+
+
+  ### Highlights (keywords for include/exclude)
+
+  Facet key: `highlights`. Response is a map of highlight arrays for each category. Currently, there are only two categories: keywords for include (category 1), and keywords for exclude (category 2). These should be highlighted in green and red, respectively when presented to the user. Additional categories can be added in the future. The arrays themselves follow the same format of the `collection` arrays above.
 method: GET
 body: {}
 parameters:
@@ -16,7 +100,7 @@ parameters:
   - name: facets[decision_counts]
     value: "1"
     id: pair_25d0fcc1956c4a52b6e7ef454c77a181
-    disabled: true
+    disabled: false
   - name: facets[user_labels]
     value: "1"
     id: pair_65704b852e744637938124a268e64bf0
@@ -28,79 +112,79 @@ parameters:
   - name: facets[searches]
     value: "1"
     id: pair_e757cbef3aab4103ac1718e035192a34
-    disabled: true
+    disabled: false
   - name: facets[exact_matches]
     value: "1"
     id: pair_934aefe0429f4bdf9b7599d8d11774f4
-    disabled: true
+    disabled: false
   - name: facets[dedup_result]
     value: "1"
     id: pair_280dff108207420e98c4f880f2f34bb6
-    disabled: true
+    disabled: false
   - name: facets[highlights]
     value: "1"
     id: pair_6fd6db71861e412e9ade0bf5e61c408c
-    disabled: true
+    disabled: false
   - name: facets[locations]
     value: "1"
     id: pair_84b0ced4d11f4f479015df4b71073849
-    disabled: true
+    disabled: false
   - name: facets[abstract_languages]
     value: "1"
     id: pair_a0a48eb023bc4fcb99b2160bf29eb6b7
-    disabled: true
+    disabled: false
   - name: facets[language]
     value: "1"
     id: pair_08883898570b4a648cc0d3c08b8ef41b
-    disabled: true
+    disabled: false
   - name: facets[journal]
     value: "1"
     id: pair_f7bf24b909744817a9ae54e6c4389d8c
-    disabled: true
+    disabled: false
   - name: facets[authors]
     value: "1"
     id: pair_25acb2c602bc418e9395f427cb236c6e
-    disabled: true
+    disabled: false
   - name: facets[year]
     value: "1"
     id: pair_d07ef452b8b94e63a79f5a8899e458c5
-    disabled: true
+    disabled: false
   - name: facets[publication_types]
     value: "1"
     id: pair_00fca1f5a5d14d98a69982e4ce59726c
-    disabled: true
+    disabled: false
   - name: facets[keyphrases]
     value: "1"
     id: pair_de071459f90043c78b4b9f8de2c02366
-    disabled: true
+    disabled: false
   - name: facets[fulltext_types]
     value: "1"
     id: pair_aff1b4d55bdc4cc1825a68489f8593da
-    disabled: true
+    disabled: false
   - name: facets[pico_control]
     value: "1"
     id: pair_c0871d89dcef43dea3219b95df06814e
-    disabled: true
+    disabled: false
   - name: facets[pico_intervention]
     value: "1"
     id: pair_5704e5301ea34e7c8235ef09428b517e
-    disabled: true
+    disabled: false
   - name: facets[pico_outcome]
     value: "1"
     id: pair_e7d0893bb7a44f1d86f6971d2e53cc5a
-    disabled: true
+    disabled: false
   - name: facets[pico_participants]
     value: "1"
     id: pair_65e07ce3af9a46a4b3961c7cb562dc64
-    disabled: true
+    disabled: false
 headers: []
 authentication:
   type: bearer
   token: "{{ _.manual_token }}"
 metaSortKey: -1643841355043
 isPrivate: false
-settingStoreCookies: true
-settingSendCookies: true
+settingStoreCookies: false
+settingSendCookies: false
 settingDisableRenderRequestBody: false
 settingEncodeUrl: true
 settingRebuildPath: true
