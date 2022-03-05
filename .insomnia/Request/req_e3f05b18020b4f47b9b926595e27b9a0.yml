@@ -1,15 +1,23 @@
 _id: req_e3f05b18020b4f47b9b926595e27b9a0
 type: Request
 parentId: fld_eeb62a531f8441478a6d2f536021400d
-modified: 1646419333595
+modified: 1646451103147
 created: 1643841355061
 url: "{{ _.base_url }}/api/v1/user_info"
 name: Log In and User Info
-description: This endpoint lists user information. It also acts as OAuth2
-  workflow token generator. Make sure to call it anytime you start receiving 401
-  errors. It will initially load the Rayyan sign in window then automatically
-  refresh the access token if it had expired. If you change environments, you
-  must clear the refresh token, the OAuth2 session and run this endpoint again.
+description: >-
+  This endpoint lists user information. It also acts as OAuth2 workflow token
+  generator. Make sure to call it anytime you start receiving 401 errors. It
+  will initially load the Rayyan sign in window then automatically refresh the
+  access token if it had expired. If you change environments, you must clear the
+  refresh token, the OAuth2 session and run this endpoint again. For the very
+  first time calling this endpoint, the Insomnia app will prompt you to enter
+  both the client id and client secret which are the Rayyan API credentials you
+  need to acquire before using the API. For more information, you are advised to
+  contact Rayyan Support.
+
+
+  Note that in a real application, you would handle the OAuth2 workflow the standard way to acquire both access and refresh tokens. The access token is echoed in this endpoint response for demonstration purposes only, but should normally be stored as a side effect of completing the OAuth2 workflow. The refresh token should be used to acquire new access tokens when the API starts returning 401 errors. If the refresh does not work, the OAuth2 should start from scratch by asking the user to sign in.
 method: GET
 body: {}
 parameters: []
