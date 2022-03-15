@@ -1,0 +1,245 @@
+_id: req_d4a5156be1364b818e7d30da788b46b9
+type: Request
+parentId: fld_1b18b5c3dce840d994fe71740803f228
+modified: 1647373743850
+created: 1647373733865
+url: "{{ _.base_url }}/zoho_subscriptions/2739018000007069219"
+name: Reactivated
+description: Make sure event_ids are monotonically increasing, otherwise the
+  request will be ignored.
+method: PUT
+body:
+  mimeType: application/json
+  text: >
+    {
+     "created_time": "2022-03-09T00:01:04-0500",
+     "event_id": "2739018000008605070",
+     "event_type": "subscription_reactivated",
+     "data": {
+      "subscription": {
+       "cancelled_at": "2022-03-09",
+       "invoice_notes": "Thanks for your business.",
+       "updated_time": "2022-03-09T00:01:04-0500",
+       "notes": [],
+       "zcrm_potential_id": "",
+       "trial_extended_count": 0,
+       "reference_id": "",
+       "addons": [],
+       "taxes": [],
+       "source": "scheduler",
+       "coupon_duration": "",
+       "subscription_id": "2739018000007069219",
+       "last_modified_by_id": "",
+       "end_of_term": false,
+       "product_id": "2739018000000074092",
+       "plan": {
+        "setup_fee": 0,
+        "quantity": 1,
+        "tax_name": "",
+        "setup_fee_tax_percentage": "",
+        "plan_code": "RYNSTMNTHLY",
+        "description": "The student membership is available only for current students. The benefits include:\n- Priority Support\n - Monthly Trainings and Access to Exclusive Tips and Tricks\n - Access to Beta Features\n- Access to Rayyan Mobile App\n - Helps Rayyan Provide FREE Service to Resource-Constrained Researchers Around The World",
+        "discount": 0,
+        "item_custom_fields": [],
+        "tax_id": "",
+        "tags": [],
+        "setup_fee_tax_id": "",
+        "total": 7.49,
+        "unit": "",
+        "setup_fee_tax_name": "",
+        "tax_type": "tax",
+        "price": 7.49,
+        "name": "Student Monthly",
+        "tax_percentage": 0,
+        "setup_fee_tax_type": "",
+        "plan_id": "2739018000000341276"
+       },
+       "pricebook_id": "",
+       "created_time": "2021-12-29T01:15:14-0500",
+       "shipping_interval_unit": "months",
+       "exchange_rate": 1,
+       "is_inclusive_tax": false,
+       "orders_remaining": 0,
+       "custom_fields": [],
+       "last_shipment_at": "",
+       "auto_apply_credits": [],
+       "product_name": "Rayyan Systems",
+       "activated_at": "2021-12-29",
+       "is_metered_billing": false,
+       "name": "Rayyan Systems-Student Monthly",
+       "zcrm_potential_name": "",
+       "interval": 1,
+       "created_by_id": "",
+       "crm_owner_id": "",
+       "card": {
+        "expiry_month": 2,
+        "funding": "debit",
+        "payment_gateway": "stripe",
+        "gateway_card_id": "pm_1KOwMyFn28oGc1yySL64pyKh",
+        "gateway_customer_id": "cus_KrejEw9dUOAp00",
+        "last_four_digits": "0033",
+        "card_id": "2739018000008025017",
+        "expiry_year": 2022
+       },
+       "status": "live",
+       "items_associated": [],
+       "billing_mode": "prepaid",
+       "channel_reference_id": "",
+       "created_at": "2021-12-29",
+       "shipping_interval": 1,
+       "payment_terms": 0,
+       "last_billing_at": "2022-02-28",
+       "currency_code": "USD",
+       "can_prorate": true,
+       "expires_at": "",
+       "interval_unit": "months",
+       "can_add_bank_account": false,
+       "custom_field_hash": {},
+       "is_advance_invoice_present": false,
+       "last_shipment_day": "",
+       "tax_rounding": "entity_level",
+       "start_date": "2021-12-29",
+       "payment_gateways": [
+        {
+         "payment_gateway": "stripe",
+         "gateway_name": "stripe"
+        }
+       ],
+       "amount": 7.49,
+       "remaining_billing_cycles": -1,
+       "subscription_number": "SUB-00188",
+       "currency_symbol": "$",
+       "current_term_starts_at": "2022-02-28",
+       "current_term_ends_at": "2022-03-29",
+       "total_orders": 0,
+       "salesperson_name": "",
+       "salesperson_id": "",
+       "child_invoice_id": "2739018000008561094",
+       "cancel_reason": "",
+       "contactpersons": [
+        {
+         "zcrm_contact_id": "4886138000019760371",
+         "phone": "",
+         "mobile": "",
+         "last_name": "Last",
+         "first_name": "First",
+         "email": "zoho-user@example.com",
+         "contactperson_id": "2739018000007069223"
+        }
+       ],
+       "auto_collect": true,
+       "channel_source": "app",
+       "sub_total": 7.49,
+       "created_date": "2021-12-29",
+       "allow_partial_payments": false,
+       "orders_created": 0,
+       "customer_id": "2739018000007069221",
+       "payment_terms_label": "Due On Receipt",
+       "customer": {
+        "website": "",
+        "zcrm_account_id": "4886138000019775663",
+        "custom_fields": [
+         {
+          "customfield_id": "2739018000000417001",
+          "show_in_store": false,
+          "show_in_portal": true,
+          "is_active": true,
+          "index": 1,
+          "label": "Organization",
+          "show_on_pdf": true,
+          "edit_on_portal": true,
+          "edit_on_store": false,
+          "show_in_all_pdf": true,
+          "value_formatted": "MAHARISHI MARKANDESHWAR INSTITUTE OF PHYSIOTHERAPY & REHABILITATION",
+          "search_entity": "contact",
+          "data_type": "string",
+          "placeholder": "cf_organization",
+          "value": "MAHARISHI MARKANDESHWAR INSTITUTE OF PHYSIOTHERAPY & REHABILITATION",
+          "is_dependent_field": false
+         },
+         {
+          "customfield_id": "2739018000000386013",
+          "show_in_store": false,
+          "show_in_portal": true,
+          "is_active": true,
+          "index": 2,
+          "label": "Position",
+          "show_on_pdf": true,
+          "edit_on_portal": true,
+          "edit_on_store": false,
+          "show_in_all_pdf": true,
+          "value_formatted": "PhD Scholar",
+          "search_entity": "contact",
+          "data_type": "string",
+          "placeholder": "cf_position",
+          "value": "PhD Scholar",
+          "is_dependent_field": false
+         }
+        ],
+        "channel_reference_id": "",
+        "last_name": "First",
+        "billing_address": {
+         "zip": "999999",
+         "country": "Canada",
+         "city": "",
+         "phone": "",
+         "street": "",
+         "attention": "",
+         "street2": "",
+         "state": "",
+         "fax": ""
+        },
+        "ip_address": "192.168.1.1",
+        "display_name": "First Last",
+        "payment_terms": 0,
+        "channel_customer_id": "",
+        "cf_position": "PhD Scholar",
+        "tags": [],
+        "cf_organization_unformatted": "MAHARISHI MARKANDESHWAR INSTITUTE OF PHYSIOTHERAPY & REHABILITATION",
+        "cf_position_unformatted": "PhD Scholar",
+        "zcrm_contact_id": "4886138000019760371",
+        "cf_organization": "MAHARISHI MARKANDESHWAR INSTITUTE OF PHYSIOTHERAPY & REHABILITATION",
+        "company_name": "",
+        "custom_field_hash": {
+         "cf_organization": "MAHARISHI MARKANDESHWAR INSTITUTE OF PHYSIOTHERAPY & REHABILITATION",
+         "cf_position": "PhD Scholar",
+         "cf_organization_unformatted": "MAHARISHI MARKANDESHWAR INSTITUTE OF PHYSIOTHERAPY & REHABILITATION",
+         "cf_position_unformatted": "PhD Scholar"
+        },
+        "salutation": "",
+        "shipping_address": {
+         "zip": "",
+         "country": "",
+         "city": "",
+         "phone": "",
+         "street": "",
+         "attention": "",
+         "street2": "",
+         "state": "",
+         "fax": ""
+        },
+        "customer_id": "2739018000007069221",
+        "first_name": "First",
+        "email": "zoho-user@example.com",
+        "payment_terms_label": ""
+       }
+      }
+     },
+     "event_time_formatted": "03.09.22",
+     "event_source": "scheduler",
+     "event_time": "2022-03-09"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_66db3a30fa5c4999880086d41951c4bb
+authentication: {}
+metaSortKey: -1644724412830
+isPrivate: false
+settingStoreCookies: false
+settingSendCookies: false
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
