@@ -1,7 +1,7 @@
 _id: req_c3a247ec8a8c48d8a0ef3cf39cdfb735
 type: Request
 parentId: fld_eeb62a531f8441478a6d2f536021400d
-modified: 1658859835226
+modified: 1658860455481
 created: 1658848365376
 url: "{{ _.base_url }}/api/v1/reviews"
 name: Reviews
@@ -20,6 +20,8 @@ body:
     		"title": "Test Review for Creation",
     		"description": "Review for testing the review creation API.",
     		"metadata_attributes": {
+    			"research_question": "new research question",
+    			"research_question_type": "new research question type",
     			"research_field": "medicine and human health",
     			"review_type": "systematic review",
     			"review_domain": "biomedical"
