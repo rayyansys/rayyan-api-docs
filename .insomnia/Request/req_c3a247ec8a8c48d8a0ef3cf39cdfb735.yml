@@ -1,7 +1,7 @@
 _id: req_c3a247ec8a8c48d8a0ef3cf39cdfb735
 type: Request
 parentId: fld_eeb62a531f8441478a6d2f536021400d
-modified: 1658855308155
+modified: 1658859835226
 created: 1658848365376
 url: "{{ _.base_url }}/api/v1/reviews"
 name: Reviews
@@ -13,34 +13,24 @@ description: >-
   Note that parameters are passed as a URL-encoded form.
 method: POST
 body:
-  mimeType: application/x-www-form-urlencoded
-  params:
-    - id: pair_822c222cdb8d4a57a25ddb812a7a11e4
-      name: review[title]
-      value: Test Review for Creation 2
-      description: ""
-    - id: pair_ed1dcaaa28d74407aea888267f068d54
-      name: review[description]
-      value: Review for testing the review creation API.
-      description: ""
-    - id: pair_f3027cbde253428d8ecbd06abe8d608b
-      name: review[metadata_attributes][research_field]
-      value: medicine and human health
-      description: ""
-    - id: pair_5f4b9d8a302444aa9e8b956f2fa52ea8
-      name: review[metadata_attributes][review_type]
-      value: systematic review
-      description: ""
-      type: text
-      multiline: false
-    - id: pair_f9b5fbc367c148149249ea9d53f02d91
-      name: review[metadata_attributes][review_domain]
-      value: biomedical
-      description: ""
+  mimeType: application/json
+  text: |-
+    {
+    	"review": {
+    		"title": "Test Review for Creation",
+    		"description": "Review for testing the review creation API.",
+    		"metadata_attributes": {
+    			"research_field": "medicine and human health",
+    			"review_type": "systematic review",
+    			"review_domain": "biomedical"
+    		},
+    		"team_id": null
+    	}
+    }
 parameters: []
 headers:
   - name: Content-Type
-    value: application/x-www-form-urlencoded
+    value: application/json
     id: pair_78660166d1784eeea6e0c9706474345b
 authentication:
   type: bearer
