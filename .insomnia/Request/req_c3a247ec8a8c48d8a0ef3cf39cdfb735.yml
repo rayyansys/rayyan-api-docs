@@ -8,9 +8,6 @@ name: Reviews
 description: >-
   This endpoint is used to create reviews given certain parameters such as
   review title, description and metadata attributes.
-
-
-  Note that parameters are passed as a URL-encoded form.
 method: POST
 body:
   mimeType: application/json
