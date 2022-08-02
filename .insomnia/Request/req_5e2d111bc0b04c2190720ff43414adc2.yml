@@ -11,7 +11,7 @@ description: >-
 
   The validity of the URL is **one hour** from time of creation. Additionally, 
 
-  multiple files can be uploaded to the same pre-signed URL.
+  multiple files can be uploaded to the same pre-signed URL where it acts as a prefix (folder).
 
 
   Uploading a file successfully to the URL returns a 201 HTTP response. 
