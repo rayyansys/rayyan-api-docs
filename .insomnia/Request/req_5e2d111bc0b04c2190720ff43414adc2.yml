@@ -1,11 +1,26 @@
 _id: req_5e2d111bc0b04c2190720ff43414adc2
 type: Request
 parentId: fld_eeb62a531f8441478a6d2f536021400d
-modified: 1659130784956
+modified: 1659472307285
 created: 1659130480699
 url: "{{ _.base_url }}/api/v1/reviews/{{ _.review_id }}/searches/new"
 name: Searches Pre-Signed URL
-description: Endpoint for generating a pre-signed URL to upload searches to S3.
+description: >-
+  Endpoint for generating a pre-signed URL to upload searches to S3.
+
+
+  The validity of the URL is **one hour** from time of creation. Additionally, 
+
+  multiple files can be uploaded to the same pre-signed URL.
+
+
+  Uploading a file successfully to the URL returns a 201 HTTP response. 
+
+
+  Uploading a file using an expired URL returns a 400 HTTP response.
+
+
+  For more information about pre-signed URLs, read the AWS documentation [here](https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-presigned-url.html).
 method: GET
 body: {}
 parameters: []
