@@ -1,0 +1,10 @@
+_id: ut_6b52a4709f324a6ca6fbb4f5c2d4d322
+type: UnitTest
+parentId: uts_85c7a3feee41421da8a58d270422624f
+modified: 1659134940543
+created: 1659134931768
+requestId: req_5e2d111bc0b04c2190720ff43414adc2
+name: Searches Pre-Signed URL
+code: |-
+  const response1 = await insomnia.send();
+  expect(response1.status).to.equal(200);
