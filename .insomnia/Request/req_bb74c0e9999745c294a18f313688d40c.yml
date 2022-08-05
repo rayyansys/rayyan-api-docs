@@ -1,11 +1,11 @@
 _id: req_bb74c0e9999745c294a18f313688d40c
 type: Request
 parentId: fld_eeb62a531f8441478a6d2f536021400d
-modified: 1659735119880
+modified: 1659735833274
 created: 1659384032130
 url: "{{ _.base_url }}/api/v1/reviews/{{ _.review_id }}/searches/"
 name: Searches
-description: >
+description: >-
   This endpoint creates a search on the backend and kick-starts a job that
   parses the search file for articles.
 
@@ -15,6 +15,9 @@ description: >
   * `s3_key`: The S3 URL pointing to the search file.
 
   * `original_filename`: The original filename of the search file.
+
+
+  A succesful request returns the created search as JSON.
 method: POST
 body:
   mimeType: application/json
