@@ -1,7 +1,7 @@
 _id: req_bb74c0e9999745c294a18f313688d40c
 type: Request
 parentId: fld_eeb62a531f8441478a6d2f536021400d
-modified: 1659735833274
+modified: 1659739558125
 created: 1659384032130
 url: "{{ _.base_url }}/api/v1/reviews/{{ _.review_id }}/searches/"
 name: Searches
@@ -24,8 +24,8 @@ body:
   text: >-
     {
     	"search": {
-    		"s3_key": "import/{% prompt 'Pre-Signed URL UUID', 'Pre-Signed URL UUID', '', 'pre-signed_url_uuid', false, true %}/{% prompt 'Search filename (with extension)', 'Search filename (with extension)', '', 'search_filename', false, true %}",
-    		"original_filename": "{% prompt 'Search filename (with extension)', 'Search filename (with extension)', '', 'search_filename', false, true %}"
+    		"s3_key": "{% response 'body', 'req_87bb62201f814981817bbab38893a2c7', 'b64::L1Bvc3RSZXNwb25zZS9LZXk=::46b', 'never', 60 %}",
+    		"original_filename": "search_file.ris"
     	}
     }
 parameters: []

@@ -1,0 +1,61 @@
+_id: req_87bb62201f814981817bbab38893a2c7
+type: Request
+parentId: fld_eeb62a531f8441478a6d2f536021400d
+modified: 1659739750446
+created: 1659738893913
+url: "{% response 'body', 'req_5e2d111bc0b04c2190720ff43414adc2',
+  'b64::JC51cmw=::46b', 'never', 60 %}"
+name: Upload Search File to S3
+description: ""
+method: POST
+body:
+  mimeType: multipart/form-data
+  params:
+    - id: pair_544c85b8c5ea4d239887b95dab3f73a2
+      name: AWSAccessKeyId
+      value: "{% response 'body', 'req_5e2d111bc0b04c2190720ff43414adc2',
+        'b64::JC5BV1NBY2Nlc3NLZXlJZA==::46b', 'never', 60 %}"
+      description: ""
+    - id: pair_3f8ea39644a647019f0ff9dd942fa044
+      name: key
+      value: "{% response 'body', 'req_5e2d111bc0b04c2190720ff43414adc2',
+        'b64::JC5rZXk=::46b', 'never', 60 %}"
+      description: ""
+    - id: pair_0f0ea7a29ed14e29a8b7f5859786904d
+      name: policy
+      value: "{% response 'body', 'req_5e2d111bc0b04c2190720ff43414adc2',
+        'b64::JC5wb2xpY3k=::46b', 'never', 60 %}"
+      description: ""
+      type: text
+      multiline: false
+    - id: pair_52691ae937c84ac2be72074b8e27a5ed
+      name: signature
+      value: "{% response 'body', 'req_5e2d111bc0b04c2190720ff43414adc2',
+        'b64::JC5zaWduYXR1cmU=::46b', 'never', 60 %}"
+      description: ""
+    - id: pair_8f58876ee421487a8331d86eb2f1f8f0
+      name: success_action_status
+      value: "{% response 'body', 'req_5e2d111bc0b04c2190720ff43414adc2',
+        'b64::JC5zdWNjZXNzX2FjdGlvbl9zdGF0dXM=::46b', 'never', 60 %}"
+      description: ""
+    - id: pair_6d92ec51d3024f4fb280337811fe619d
+      name: file
+      value: ""
+      description: ""
+      type: file
+      multiline: null
+      fileName: /home/fabubaker/Desktop/Rayyan Stuff/Rayyan Samples/article_exact.ris
+parameters: []
+headers:
+  - name: Content-Type
+    value: multipart/form-data
+    id: pair_9782ae04446a4aeaa199735a02cd8269
+authentication: {}
+metaSortKey: -1643841355036.9531
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
