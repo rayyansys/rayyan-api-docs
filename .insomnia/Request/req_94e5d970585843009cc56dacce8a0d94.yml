@@ -1,7 +1,7 @@
 _id: req_94e5d970585843009cc56dacce8a0d94
 type: Request
 parentId: fld_eeb62a531f8441478a6d2f536021400d
-modified: 1646419128096
+modified: 1659736887058
 created: 1643841355064
 url: "{{ _.base_url }}/api/v1/reviews/{{ _.review_id }}/facets"
 name: Facets
@@ -84,7 +84,10 @@ description: >
 
   ### Searches
 
-  Facet key: `searches`. Response is an array of objects representing each file (or review copy) uploaded by users (or copied from other reviews). The `total` for each object is the number of identified articles in that file (or copy) regardless of duplicates within the same file or across multiple files. It does not change either when users mark articles as duplicates. This nunmber should match the `fetched` field unless there are invalid results in the file that could not be parsed where the total of `fetched` plus `invalid_results` should equal to the `total` field.
+  Facet key: `searches`. Response is an array of objects representing each file (or review copy) uploaded by users (or copied from other reviews). The `total` for each object is the number of identified articles in that file (or copy) regardless of duplicates within the same file or across multiple files. It does not change either when users mark articles as duplicates. This number should match the `fetched` field unless there are invalid results in the file that could not be parsed where the total of `fetched` plus `invalid_results` should equal to the `total` field.
+
+
+  The `status` field represents the state of the job that is processing the search. A `status` of `new` means that the processing job has not been started, `pending` means that a job is currently processing the search, `failed` means that the job has failed (the exact error is shown in the `display` field), and `ready` means that the job has fully processed the search file. 
 
 
   ### Highlights (keywords for include/exclude)
