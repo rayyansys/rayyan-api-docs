@@ -1,18 +1,27 @@
 _id: req_bb74c0e9999745c294a18f313688d40c
 type: Request
 parentId: fld_eeb62a531f8441478a6d2f536021400d
-modified: 1659734681363
+modified: 1659735119880
 created: 1659384032130
 url: "{{ _.base_url }}/api/v1/reviews/{{ _.review_id }}/searches/"
 name: Searches
-description: ""
+description: >
+  This endpoint creates a search on the backend and kick-starts a job that
+  parses the search file for articles.
+
+
+  It takes two arguments, passed through the request body:
+
+  * `s3_key`: The S3 URL pointing to the search file.
+
+  * `original_filename`: The original filename of the search file.
 method: POST
 body:
   mimeType: application/json
   text: >-
     {
     	"search": {
-    		"s3_key": "import/{% prompt 'Pre-Signed URL', 'Pre-Signed URL', '', 'pre-signed_url', false, true %}/{% prompt 'Search filename (with extension)', 'Search filename (with extension)', '', 'search_filename', false, true %}",
+    		"s3_key": "import/{% prompt 'Pre-Signed URL UUID', 'Pre-Signed URL UUID', '', 'pre-signed_url_uuid', false, true %}/{% prompt 'Search filename (with extension)', 'Search filename (with extension)', '', 'search_filename', false, true %}",
     		"original_filename": "{% prompt 'Search filename (with extension)', 'Search filename (with extension)', '', 'search_filename', false, true %}"
     	}
     }
