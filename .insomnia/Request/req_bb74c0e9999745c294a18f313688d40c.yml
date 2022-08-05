@@ -1,0 +1,34 @@
+_id: req_bb74c0e9999745c294a18f313688d40c
+type: Request
+parentId: fld_eeb62a531f8441478a6d2f536021400d
+modified: 1659734681363
+created: 1659384032130
+url: "{{ _.base_url }}/api/v1/reviews/{{ _.review_id }}/searches/"
+name: Searches
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: >-
+    {
+    	"search": {
+    		"s3_key": "import/{% prompt 'Pre-Signed URL', 'Pre-Signed URL', '', 'pre-signed_url', false, true %}/{% prompt 'Search filename (with extension)', 'Search filename (with extension)', '', 'search_filename', false, true %}",
+    		"original_filename": "{% prompt 'Search filename (with extension)', 'Search filename (with extension)', '', 'search_filename', false, true %}"
+    	}
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_5e172084476e45d4960e1dae02b5d97b
+authentication:
+  type: bearer
+  token: "{{ _.manual_token }}"
+metaSortKey: -1643841355035.9688
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
