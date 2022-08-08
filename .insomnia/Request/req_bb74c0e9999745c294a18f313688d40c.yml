@@ -1,0 +1,46 @@
+_id: req_bb74c0e9999745c294a18f313688d40c
+type: Request
+parentId: fld_eeb62a531f8441478a6d2f536021400d
+modified: 1659739558125
+created: 1659384032130
+url: "{{ _.base_url }}/api/v1/reviews/{{ _.review_id }}/searches/"
+name: Searches
+description: >-
+  This endpoint creates a search on the backend and kick-starts a job that
+  parses the search file for articles.
+
+
+  It takes two arguments, passed through the request body:
+
+  * `s3_key`: The S3 URL pointing to the search file.
+
+  * `original_filename`: The original filename of the search file.
+
+
+  A succesful request returns the created search as JSON.
+method: POST
+body:
+  mimeType: application/json
+  text: >-
+    {
+    	"search": {
+    		"s3_key": "{% response 'body', 'req_87bb62201f814981817bbab38893a2c7', 'b64::L1Bvc3RSZXNwb25zZS9LZXk=::46b', 'never', 60 %}",
+    		"original_filename": "search_file.ris"
+    	}
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_5e172084476e45d4960e1dae02b5d97b
+authentication:
+  type: bearer
+  token: "{{ _.manual_token }}"
+metaSortKey: -1643841355035.9688
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
