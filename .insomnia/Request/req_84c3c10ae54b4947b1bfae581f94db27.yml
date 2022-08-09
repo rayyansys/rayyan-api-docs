@@ -1,0 +1,31 @@
+_id: req_84c3c10ae54b4947b1bfae581f94db27
+type: Request
+parentId: fld_eeb62a531f8441478a6d2f536021400d
+modified: 1660088304634
+created: 1660087332898
+url: "{{ _.base_url }}/api/v1/reviews/{{ _.review_id }}/searches/{% response
+  'body', 'req_bb74c0e9999745c294a18f313688d40c', 'b64::JC5pZA==::46b', 'never',
+  60 %}"
+name: Searches
+description: This endpoint is used to delete a search. Specify the id of the
+  search to delete in the URL.
+method: DELETE
+body:
+  mimeType: application/json
+  text: ""
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_5e172084476e45d4960e1dae02b5d97b
+authentication:
+  type: bearer
+  token: "{{ _.manual_token }}"
+metaSortKey: -1643841355034.9844
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
