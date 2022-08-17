@@ -1,7 +1,7 @@
 _id: req_87bb62201f814981817bbab38893a2c7
 type: Request
 parentId: fld_eeb62a531f8441478a6d2f536021400d
-modified: 1659739838276
+modified: 1660770576194
 created: 1659738893913
 url: "{% response 'body', 'req_5e2d111bc0b04c2190720ff43414adc2',
   'b64::JC51cmw=::46b', 'never', 60 %}"
@@ -12,9 +12,24 @@ body:
   mimeType: multipart/form-data
   params:
     - id: pair_544c85b8c5ea4d239887b95dab3f73a2
-      name: AWSAccessKeyId
+      name: x-amz-credential
       value: "{% response 'body', 'req_5e2d111bc0b04c2190720ff43414adc2',
-        'b64::JC5BV1NBY2Nlc3NLZXlJZA==::46b', 'never', 60 %}"
+        'b64::JC54LWFtei1jcmVkZW50aWFs::46b', 'never', 60 %}"
+      description: ""
+    - id: pair_b7041b0a7800416fbb27874686d1ecad
+      name: x-amz-algorithm
+      value: "{% response 'body', 'req_5e2d111bc0b04c2190720ff43414adc2',
+        'b64::JC54LWFtei1hbGdvcml0aG0=::46b', 'never', 60 %}"
+      description: ""
+    - id: pair_0daa149436184af58b9fabbecc99ee76
+      name: x-amz-date
+      value: "{% response 'body', 'req_5e2d111bc0b04c2190720ff43414adc2',
+        'b64::JC54LWFtei1kYXRl::46b', 'never', 60 %}"
+      description: ""
+    - id: pair_52691ae937c84ac2be72074b8e27a5ed
+      name: x-amz-signature
+      value: "{% response 'body', 'req_5e2d111bc0b04c2190720ff43414adc2',
+        'b64::JC54LWFtei1zaWduYXR1cmU=::46b', 'never', 60 %}"
       description: ""
     - id: pair_3f8ea39644a647019f0ff9dd942fa044
       name: key
@@ -28,11 +43,6 @@ body:
       description: ""
       type: text
       multiline: false
-    - id: pair_52691ae937c84ac2be72074b8e27a5ed
-      name: signature
-      value: "{% response 'body', 'req_5e2d111bc0b04c2190720ff43414adc2',
-        'b64::JC5zaWduYXR1cmU=::46b', 'never', 60 %}"
-      description: ""
     - id: pair_8f58876ee421487a8331d86eb2f1f8f0
       name: success_action_status
       value: "{% response 'body', 'req_5e2d111bc0b04c2190720ff43414adc2',
