@@ -1,0 +1,26 @@
+_id: req_2c7b7d708c2f4340aec60545f487b587
+type: Request
+parentId: fld_eeb62a531f8441478a6d2f536021400d
+modified: 1661363145365
+created: 1661288397352
+url: "{{ _.base_url }}/api/v1/reviews/{{ _.review_id
+  }}/delete_review_access?user_id={% prompt 'User ID to be revoked', '', '',
+  'delete_review_access_role_id', false, true %}"
+name: Delete Review Access
+description: Use this endpoint to completely remove a user and the user's
+  changes from the review.
+method: POST
+body: {}
+parameters: []
+headers: []
+authentication:
+  type: bearer
+  token: "{{ _.manual_token }}"
+metaSortKey: -1643841355034.0615
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
