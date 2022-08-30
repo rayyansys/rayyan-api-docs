@@ -1,0 +1,29 @@
+_id: req_b007eb5e437e4ec08421b3cbe1af4d13
+type: Request
+parentId: fld_eeb62a531f8441478a6d2f536021400d
+modified: 1661543718977
+created: 1661285079214
+url: "{{ _.base_url }}/api/v1/reviews/{{ _.review_id }}/revoke?user_id={% prompt
+  'User ID to be revoked', '', '', 'revoke_user_id', false, true %}"
+name: Revoke
+description: >-
+  Use this endpoint to revoke a user from the review. Revoking does NOT remove
+  decisions or any other changes made by this user.
+
+
+  Note that this endpoint requires the `revoked_roles` feature flag to be enabled.
+method: POST
+body: {}
+parameters: []
+headers: []
+authentication:
+  type: bearer
+  token: "{{ _.manual_token }}"
+metaSortKey: -1643841355034.246
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
