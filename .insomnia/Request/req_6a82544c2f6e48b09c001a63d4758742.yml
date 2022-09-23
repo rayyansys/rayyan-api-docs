@@ -1,0 +1,54 @@
+_id: req_6a82544c2f6e48b09c001a63d4758742
+type: Request
+parentId: fld_eeb62a531f8441478a6d2f536021400d
+modified: 1663963041649
+created: 1663258538389
+url: "{{ _.base_url }}/api/v1/reviews/{{ _.review_id }}/update_review_access"
+name: Update Review Access
+description: >
+  Use this endpoint to update the roles of invitees in a review. It takes the
+  following parameters in the body:
+
+
+  * `role_id`: The id of the role to assign to the invitees. The table below lists the roles that can be assigned to an invitee:
+
+
+  | Role ID | Role Name    |
+
+  |---------|--------------|
+
+  | 2       | Collaborator |
+
+  | 3       | Viewer       |
+
+  | 4       | Translator   |
+
+  | 6       | Reviewer     |
+
+
+  * `user_emails`: An array of strings containing the emails of the invitees. Eg: `["user1@example.com", "user2@example.com"]`.
+method: POST
+body:
+  mimeType: application/json
+  text: >-
+    {
+    	"role_id": {% prompt 'New role id to assign to invitees', '', '', '', false, true %},
+    	"user_emails": ["{% prompt 'Email of invitees to update', '', '', '', false, true %}"]
+    }
+parameters: []
+headers:
+  - id: pair_455d5875e35844fba162061d1f8c3821
+    name: content-type
+    value: application/json
+    description: ""
+authentication:
+  type: bearer
+  token: "{{ _.manual_token }}"
+metaSortKey: -1643841355034.0308
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
