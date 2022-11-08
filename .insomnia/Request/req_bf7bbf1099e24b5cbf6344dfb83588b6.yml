@@ -1,0 +1,27 @@
+_id: req_bf7bbf1099e24b5cbf6344dfb83588b6
+type: Request
+parentId: fld_eeb62a531f8441478a6d2f536021400d
+modified: 1667579964297
+created: 1667578354892
+url: "{{ _.base_url }}/api/v1/reviews/{{ _.review_id }}/"
+name: Reviews Show
+description: >-
+  Use this endpoint to retrieve metadata information about a review.
+
+
+  The returned data also contains the complete list of users (owner, collaborators, viewers, team admins, team collaborators, etc) associated with the review.
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication:
+  type: bearer
+  token: "{{ _.manual_token }}"
+metaSortKey: -1643841355079.625
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
