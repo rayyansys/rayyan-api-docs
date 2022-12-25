@@ -1,7 +1,7 @@
 _id: req_4c2671d88de34e3786a95198a1b3fec3
 type: Request
 parentId: fld_eeb62a531f8441478a6d2f536021400d
-modified: 1646345547539
+modified: 1671939951488
 created: 1643841355063
 url: "{{ _.base_url }}/api/v1/reviews/{{ _.review_id }}/articles"
 name: Articles
@@ -25,7 +25,9 @@ description: >
   ```json
 
   {
-    title:              // <String> The title of the article
+    title:              // <Array|String> The title(s) of the article. An Array is only returned
+                        //                if the article has more than one title (e.g. in
+                        //                different languages or subtitles).
     rayyan_id:          // <Integer> The id of the article used internally by Rayyan
     citation:           // <String> The venue of the article, i.e. which journal,
                         //          volume and issue.
