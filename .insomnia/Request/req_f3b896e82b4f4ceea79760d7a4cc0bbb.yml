@@ -1,0 +1,234 @@
+_id: req_f3b896e82b4f4ceea79760d7a4cc0bbb
+type: Request
+parentId: fld_eeb62a531f8441478a6d2f536021400d
+modified: 1672450912460
+created: 1668548881278
+url: "{{ _.base_url }}/api/v1/reviews/{{ _.review_id }}/results"
+name: Results
+description: >-
+  Retrieves articles in a review based on specified filters. Filters are passed
+  in as query parameters and are described below:
+
+
+  - `start`: Number of initial articles to skip when retrieving. Note that this depends on the sort order specified by the `order` parameter.
+
+  - `length`: The number of articles to retrieve.
+
+  - `order[0][column]`: The column to sort the articles by. If not specified, defaults to article id. Values are as follows:
+      - 0 = article id
+      - 1 = date
+      - 2 = title
+      - 3 = authors
+      - 4 = rating
+  - `order[0][dir]`: The direction to sort, either `asc` or `desc`.
+
+  - `search[value]`: Specify a keyword for retrieving articles using full-text search.
+
+  - `extra`: This is a dictionary that contains facet-based filter parameters, which are described below. Parameters ending with `[]` can contain multiple values.
+      - `article_ids`: Filter based on ids.
+      - `mode`: Filter based on inclusion decision. Values can be `undecided`, `maybe`, `included`  `excluded` or `conflict` if the review blind mode is currently off.
+      - `searches[]`: Filter using search ids.
+      - `highlights_1[]`: Filter based on inclusion highlight keyword.
+      - `highlights_2[]`: Filter based on exclusion highlight keyword.
+      - `language[]`: Filter based on article language.
+      - `keyphrases[]`: Filter based on associated keywords, i.e. values from the “topics” facet.
+      - `locations[]`: Filters based on location of publication.
+      - `journal[]`: Filters based on journal of publication.
+      - `authors[]`: Filter based on listed authors.
+      - `year[]`: Filter based on year of publication.
+      - `publication_types[]` : Filter based on publication type.
+      - `user_labels[]`: Filter based on inserted user labels.
+      - `exclusion_labels[]`: Filter based on inserted exclusion labels.
+      - `abstract_languages[]`: Filter based on the abstract languages.
+      - `fulltext_types[]`: Filter based on uploaded full-text types. Values can be `pr` for private, `pu` for public.
+      - `customized_by[]`: Filter based on decisions made by users by specifiying user ids. If omitted, defaults to all users currently in the review.
+      - `decision_at_least`: Filter based on minimum collaborator decisions.
+      - `decision_at_most`: Filter based on maximum collaborator decisions.
+      - `dedup_result`: Filter based on dedup results. If not specified, retrieves all articles except those with the `deleted` dedup result. Values can be:
+          - 0 = unresolved
+          - 1 = deleted
+          - 2 = not duplicates
+          - 3 = resolved
+  				- all = retrieves all articles irrespective of dedup results.
+      - `dedup_job_id`: Filter based on dedup job id.
+      - `dedup_result_cluster_id`: Filter based on dedup result cluster id.
+      - `exact_matches[]`: Filter based on the number of exact matches hits.
+      - `pico_participants[]`: Filter based on PICO population keywords.
+      - `pico_intervention[]`: Filter based on PICO intervention keywords.
+      - `pico_control[]`: Filter based on PICO control keywords.
+      - `pico_outcome[]`: Filter based on PICO outcome keywords.
+method: GET
+body: {}
+parameters:
+  - id: pair_88a1385f2d05417b90214b2df7a0e2e9
+    name: start
+    value: "0"
+    description: ""
+    disabled: true
+  - id: pair_8743fd9dd80d448ab31d77f685c38371
+    name: length
+    value: "5"
+    description: ""
+    disabled: true
+  - id: pair_036b29f00fd742fca552074ee1c54704
+    name: order[0][column]
+    value: "1"
+    description: ""
+    disabled: true
+  - id: pair_e1c89596528c4ddabfd84cdaeb9c575f
+    name: order[0][dir]
+    value: asc
+    description: ""
+    disabled: true
+  - id: pair_d5efdb03d8a7470fb897ec000da8e28d
+    name: search[value]
+    value: ""
+    description: ""
+    disabled: true
+  - id: pair_3defd68e81ec42068e553d9082bf8047
+    name: extra[article_ids][]
+    value: ""
+    description: ""
+    disabled: true
+  - id: pair_8a8e4feb3c0544ff992f5016bd6bc2bb
+    name: extra[mode]
+    value: ""
+    description: ""
+    disabled: true
+  - id: pair_1931bba60b0240f69104d0b1bb2c9084
+    name: extra[searches][]
+    value: ""
+    description: ""
+    disabled: true
+  - id: pair_39da1a4ed2d7462d932a83070389e657
+    name: extra[highlights_1][]
+    value: ""
+    description: ""
+    disabled: true
+  - id: pair_976c2e6034a04a79877d1d27e15d83cc
+    name: extra[highlights_2][]
+    value: ""
+    description: ""
+    disabled: true
+  - id: pair_d4fd6f6ac77647818953c2b2bba7bac1
+    name: extra[language][]
+    value: ""
+    description: ""
+    disabled: true
+  - id: pair_bbcb0e5179a2465ebceb7f4900386ffb
+    name: extra[keyphrases][]
+    value: ""
+    description: ""
+    disabled: true
+  - id: pair_91166c4bb67844b5ba9354d04baa5ed4
+    name: extra[locations][]
+    value: ""
+    description: ""
+    disabled: true
+  - id: pair_b7f68c09de0f433d96a47e843b803901
+    name: extra[journal][]
+    value: ""
+    description: ""
+    disabled: true
+  - id: pair_de9c0cee878c42f8a265392762753b72
+    name: extra[authors][]
+    value: ""
+    description: ""
+    disabled: true
+  - id: pair_4e94e8828f9547dc9e0f3761245b0c0c
+    name: extra[year][]
+    value: ""
+    description: ""
+    disabled: true
+  - id: pair_3dcca969b82748328ffc7576c2a731ce
+    name: extra[publication_types][]
+    value: ""
+    description: ""
+    disabled: true
+  - id: pair_47eaf3c973544b8cbc72bcbe6bbe3d72
+    name: extra[user_labels][]
+    value: ""
+    description: ""
+    disabled: true
+  - id: pair_ffa8dc9bbb7d4110a4f7a7757eff2e7f
+    name: extra[exclusion_labels][]
+    value: ""
+    description: ""
+    disabled: true
+  - id: pair_f100d06b60514ea1a58555faf4b8e135
+    name: extra[abstract_languages][]
+    value: ""
+    description: ""
+    disabled: true
+  - id: pair_c11b561430434300bc6031e344e1bd84
+    name: extra[fulltext_types][]
+    value: ""
+    description: ""
+    disabled: true
+  - id: pair_13cd849777aa4c1dbedfedcae1c68d74
+    name: extra[customized_by]
+    value: ""
+    description: ""
+    disabled: true
+  - id: pair_2bb4e652538944e0b07f460d29468a12
+    name: extra[decision_at_least]
+    value: ""
+    description: ""
+    disabled: true
+  - id: pair_ab4310ffd2fe4575b8355448159aa5a7
+    name: extra[decision_at_most]
+    value: ""
+    description: ""
+    disabled: true
+  - id: pair_1cbb1ef87c2b40d5924c47801c77765b
+    name: extra[dedup_result]
+    value: ""
+    description: ""
+    disabled: true
+  - id: pair_b237f7b62b1d400b947fab3bf1eb8d0e
+    name: extra[dedup_job_id]
+    value: ""
+    description: ""
+    disabled: true
+  - id: pair_06433e7cc300485aa3d50e63e14047f9
+    name: extra[dedup_result_cluster_id]
+    value: ""
+    description: ""
+    disabled: true
+  - id: pair_9e8ea344dfa145d187b565bfd28ab1b7
+    name: extra[exact_matches]
+    value: ""
+    description: ""
+    disabled: true
+  - id: pair_06def708297a44db99609b6e07b90c8a
+    name: extra[pico_participants][]
+    value: ""
+    description: ""
+    disabled: true
+  - id: pair_f38269bac51949bb99b351ed4355ca87
+    name: extra[pico_intervention][]
+    value: ""
+    description: ""
+    disabled: true
+  - id: pair_07e4eef78c554bbf87f10b9d5589c7f3
+    name: extra[pico_control][]
+    value: ""
+    description: ""
+    disabled: true
+  - id: pair_91a0c5df1566470bb7a147dab5884550
+    name: extra[pico_outcome][]
+    value: ""
+    description: ""
+    disabled: true
+headers: []
+authentication:
+  type: bearer
+  token: "{{ _.manual_token }}"
+metaSortKey: -1643841355066
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
