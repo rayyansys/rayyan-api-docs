@@ -1,0 +1,22 @@
+_id: req_260fc308a35b46aca386149678a16f3f
+type: Request
+parentId: fld_fa095e385b0a4c9a9db3860422acd405
+modified: 1675359798508
+created: 1675359707107
+url: "{{ _.base_url }}/api/v1/reviews/{{ _.review_id }}/{{ _.article1_id
+  }}/notes/_.note1_id"
+name: Delete note
+description: ""
+method: DELETE
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1675359707107
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

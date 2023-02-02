@@ -1,0 +1,29 @@
+_id: req_a43b03bccb91493da1b4917dac91ff85
+type: Request
+parentId: fld_fa095e385b0a4c9a9db3860422acd405
+modified: 1675363127227
+created: 1675359498215
+url: "{{ _.base_url }}/api/v1/reviews/{{ _.review_id }}/{{ _.article1_id }}/notes"
+name: Create note
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"text": "Note Text"	
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_1b3dbb12640f44eaa90e7e35eaa35c22
+authentication: {}
+metaSortKey: -1675359498215
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
