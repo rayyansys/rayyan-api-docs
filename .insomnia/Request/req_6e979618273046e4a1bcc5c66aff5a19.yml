@@ -1,7 +1,7 @@
 _id: req_6e979618273046e4a1bcc5c66aff5a19
 type: Request
 parentId: fld_7e76338e9b1c422da0a1f5c4696d395f
-modified: 1675363938337
+modified: 1675366386430
 created: 1675363111167
 url: "{{ _.base_url }}/api/v1/reviews/{{ _.review_id }}/highlight"
 name: Delete highlight
@@ -19,7 +19,9 @@ headers:
   - name: Content-Type
     value: application/json
     id: pair_9a5c8fdb54a74ffabf9669cdfaf7f62d
-authentication: {}
+authentication:
+  type: bearer
+  token: "{{ _.manual_token }}"
 metaSortKey: -1675363111167
 isPrivate: false
 settingStoreCookies: true

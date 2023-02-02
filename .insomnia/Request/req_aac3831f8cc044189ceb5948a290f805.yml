@@ -1,17 +1,27 @@
 _id: req_aac3831f8cc044189ceb5948a290f805
 type: Request
 parentId: fld_fa095e385b0a4c9a9db3860422acd405
-modified: 1675359790782
+modified: 1675366392341
 created: 1675359697361
-url: "{{ _.base_url }}/api/v1/reviews/{{ _.review_id }}/{{ _.article1_id
-  }}/notes/_.note1_id"
+url: "{{ _.base_url }}/api/v1/reviews/{{ _.review_id }}/articles/{{
+  _.article1_id }}/notes/{{ _.note1_id }}"
 name: Update note
 description: ""
 method: PUT
-body: {}
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"text": "new text"
+    }
 parameters: []
-headers: []
-authentication: {}
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_901a0b1665624816aa270c3dc84be4c4
+authentication:
+  type: bearer
+  token: "{{ _.manual_token }}"
 metaSortKey: -1675359697361
 isPrivate: false
 settingStoreCookies: true
