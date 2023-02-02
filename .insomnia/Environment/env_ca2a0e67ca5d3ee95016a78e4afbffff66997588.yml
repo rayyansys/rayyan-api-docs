@@ -1,7 +1,7 @@
 _id: env_ca2a0e67ca5d3ee95016a78e4afbffff66997588
 type: Environment
 parentId: wrk_7aa71d7e9efe438b96b31f9cdb58ca36
-modified: 1644603272021
+modified: 1675366518740
 created: 1643841364436
 name: Base Environment
 data:
@@ -17,6 +17,8 @@ data:
     'b64::JC5hcnRpY2xlc1sxXS5yYXl5YW5faWQ=::46b', 'no-history', 60 %}"
   article3_id: "{% response 'body', 'req_4c2671d88de34e3786a95198a1b3fec3',
     'b64::JC5hcnRpY2xlc1syXS5yYXl5YW5faWQ=::46b', 'no-history', 60 %}"
+  note1_id: "{% response 'body', 'req_a43b03bccb91493da1b4917dac91ff85',
+    'b64::JA==::46b', 'always', 60 %}"
   manual_token: "{% response 'body', 'req_e3f05b18020b4f47b9b926595e27b9a0',
     'b64::JC5yZXF1ZXN0X3Rva2Vu::46b', 'no-history', 60 %}"
 dataPropertyOrder:
@@ -28,6 +30,7 @@ dataPropertyOrder:
     - article1_id
     - article2_id
     - article3_id
+    - note1_id
     - manual_token
 color: null
 isPrivate: false
