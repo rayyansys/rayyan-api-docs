@@ -1,11 +1,27 @@
 _id: req_238e024f82734dbc9252628ec85fc0f4
 type: Request
 parentId: fld_7e76338e9b1c422da0a1f5c4696d395f
-modified: 1675366387736
+modified: 1675614090063
 created: 1675363098809
 url: "{{ _.base_url }}/api/v1/reviews/{{ _.review_id }}/highlights"
 name: Create highlight
-description: ""
+description: >-
+  Use this endpoint to create a highlight, by sending both `category` and
+  `keyword` params
+
+  category: Integer
+
+
+  | category ID | category Name  |
+
+  |-------------|----------------|
+
+  | 1           | Include        |
+
+  | 2           | Exclude        |
+
+
+  `keyword`: highlight string 
 method: POST
 body:
   mimeType: application/json

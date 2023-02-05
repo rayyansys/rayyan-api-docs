@@ -1,12 +1,15 @@
 _id: req_a43b03bccb91493da1b4917dac91ff85
 type: Request
 parentId: fld_fa095e385b0a4c9a9db3860422acd405
-modified: 1675366393211
+modified: 1675614263663
 created: 1675359498215
 url: "{{ _.base_url }}/api/v1/reviews/{{ _.review_id }}/articles/{{
   _.article1_id }}/notes"
 name: Create note
-description: ""
+description: |
+  Use this endpoint to create a note for a specific articles inside a review.
+
+  The endpoint takes `text` as a note's param.
 method: POST
 body:
   mimeType: application/json

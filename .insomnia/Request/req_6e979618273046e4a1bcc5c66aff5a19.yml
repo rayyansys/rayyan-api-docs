@@ -1,11 +1,19 @@
 _id: req_6e979618273046e4a1bcc5c66aff5a19
 type: Request
 parentId: fld_7e76338e9b1c422da0a1f5c4696d395f
-modified: 1675366386430
+modified: 1675614144922
 created: 1675363111167
 url: "{{ _.base_url }}/api/v1/reviews/{{ _.review_id }}/highlight"
 name: Delete highlight
-description: ""
+description: |
+  Endpoint to delete a specific highlight
+  `id`: highlight string which will be deleted
+  `category`: integer, as follows:
+
+  | category ID | category Name  |
+  |-------------|----------------|
+  | 1           | Include        |
+  | 2           | Exclude        |
 method: DELETE
 body:
   mimeType: application/json

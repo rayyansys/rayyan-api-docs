@@ -1,11 +1,11 @@
 _id: req_c77d2c8f9ab047f0a735a30df9b91bdc
 type: Request
 parentId: fld_eeb62a531f8441478a6d2f536021400d
-modified: 1675366454430
+modified: 1675614330156
 created: 1675258506996
 url: "{{ _.base_url }}/api/v1/reviews/{{ _.review_id }}/calculate_ratings"
 name: Compute ratings
-description: ""
+description: This endpoint triggers `calculate_ratings` for a review
 method: POST
 body: {}
 parameters: []
