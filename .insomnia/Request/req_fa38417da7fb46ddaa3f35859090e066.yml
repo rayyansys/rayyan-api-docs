@@ -5,7 +5,7 @@ modified: 1675614362621
 created: 1675356227244
 url: "{{ _.base_url }}/api/v1/reviews/{{ _.review_id }}/unarchive"
 name: Unarchive
-description: This endpoint unarchive the review
+description: This endpoint unarchives the review
 method: POST
 body: {}
 parameters: []
