@@ -5,7 +5,7 @@ modified: 1675614354888
 created: 1675356164311
 url: "{{ _.base_url }}/api/v1/reviews/{{ _.review_id }}/archive"
 name: Archive
-description: This endpoint archive the review
+description: This endpoint archives the review
 method: POST
 body: {}
 parameters: []
