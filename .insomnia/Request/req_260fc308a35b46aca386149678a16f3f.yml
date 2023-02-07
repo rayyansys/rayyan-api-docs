@@ -1,0 +1,24 @@
+_id: req_260fc308a35b46aca386149678a16f3f
+type: Request
+parentId: fld_fa095e385b0a4c9a9db3860422acd405
+modified: 1675614306495
+created: 1675359707107
+url: "{{ _.base_url }}/api/v1/reviews/{{ _.review_id }}/articles/{{
+  _.article1_id }}/notes/{{ _.note1_id }}"
+name: Delete note
+description: This endpoint deletes a specific note for a given article inside a review.
+method: DELETE
+body: {}
+parameters: []
+headers: []
+authentication:
+  type: bearer
+  token: "{{ _.manual_token }}"
+metaSortKey: -1675359707107
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

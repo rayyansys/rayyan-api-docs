@@ -1,0 +1,23 @@
+_id: req_fa38417da7fb46ddaa3f35859090e066
+type: Request
+parentId: fld_eeb62a531f8441478a6d2f536021400d
+modified: 1675614362621
+created: 1675356227244
+url: "{{ _.base_url }}/api/v1/reviews/{{ _.review_id }}/unarchive"
+name: Unarchive
+description: This endpoint unarchives the review
+method: POST
+body: {}
+parameters: []
+headers: []
+authentication:
+  type: bearer
+  token: "{{ _.manual_token }}"
+metaSortKey: -1643841355034.5537
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
