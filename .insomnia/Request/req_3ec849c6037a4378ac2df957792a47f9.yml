@@ -1,0 +1,28 @@
+_id: req_3ec849c6037a4378ac2df957792a47f9
+type: Request
+parentId: fld_eeb62a531f8441478a6d2f536021400d
+modified: 1676738024439
+created: 1676676163211
+url: "{{ _.base_url }}/api/v1/reviews/{{ _.review_id }}/duplicates/{{
+  _.article1_id }}"
+name: Duplicates
+description: >-
+  Use this endpoint for retrieving the unresolved articles in a cluster.
+
+
+  Specify the article id in the query path to retrieve all the unresolved duplicates belonging to that article's cluster.
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication:
+  type: bearer
+  token: "{{ _.manual_token }}"
+metaSortKey: -1643841355037.4453
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

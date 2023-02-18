@@ -1,0 +1,47 @@
+_id: req_62d5f98e2f984cf4b2152bfdd863075d
+type: Request
+parentId: fld_eeb62a531f8441478a6d2f536021400d
+modified: 1676741836845
+created: 1676679154425
+url: "{{ _.base_url }}/api/v1/reviews/{{ _.review_id }}/duplicates/{{
+  _.article1_id }}"
+name: Duplicates
+description: >+
+  Use this endpoint to resolve duplicates. Indicate the article to resolve by
+  specifying the article id in the path.
+
+
+  The following parameters are passed in the body:
+
+
+  - `duplicate_action`: An integer value that denotes the decision to apply to the duplicate. Can take the following values:
+  	- 1 = `USER_ACTION_YES` (article is a duplicate)
+  	- 2 = `USER_ACTION_NO` (article is not a duplicate)
+
+  	
+  - `isDeletedArticle`: Deprecated attribute, always set this to `false` or don't specify it at all.
+
+method: PATCH
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"duplicate_action": 1,
+    	"isDeletedArticle": false
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_faa631e2d5d74937b56c83facc5c1b18
+authentication:
+  type: bearer
+  token: "{{ _.manual_token }}"
+metaSortKey: -1643841355037.0762
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
