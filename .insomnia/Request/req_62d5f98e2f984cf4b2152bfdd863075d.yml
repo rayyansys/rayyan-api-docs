@@ -1,7 +1,7 @@
 _id: req_62d5f98e2f984cf4b2152bfdd863075d
 type: Request
 parentId: fld_eeb62a531f8441478a6d2f536021400d
-modified: 1676741836845
+modified: 1677771687350
 created: 1676679154425
 url: "{{ _.base_url }}/api/v1/reviews/{{ _.review_id }}/duplicates/{{
   _.article1_id }}"
@@ -15,8 +15,8 @@ description: >+
 
 
   - `duplicate_action`: An integer value that denotes the decision to apply to the duplicate. Can take the following values:
-  	- 1 = `USER_ACTION_YES` (article is a duplicate)
-  	- 2 = `USER_ACTION_NO` (article is not a duplicate)
+  	- 1 = YES (article is a duplicate)
+  	- 2 = NO (article is not a duplicate)
 
   	
   - `isDeletedArticle`: Deprecated attribute, always set this to `false` or don't specify it at all.

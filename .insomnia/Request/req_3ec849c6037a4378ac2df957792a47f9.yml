@@ -1,7 +1,7 @@
 _id: req_3ec849c6037a4378ac2df957792a47f9
 type: Request
 parentId: fld_eeb62a531f8441478a6d2f536021400d
-modified: 1676738024439
+modified: 1677771778978
 created: 1676676163211
 url: "{{ _.base_url }}/api/v1/reviews/{{ _.review_id }}/duplicates/{{
   _.article1_id }}"
@@ -11,6 +11,9 @@ description: >-
 
 
   Specify the article id in the query path to retrieve all the unresolved duplicates belonging to that article's cluster.
+
+
+  Note that this endpoint should be used for articles that have possible duplicates (identified from the response of `GET /articles` and optionally using the dedup results facet). Otherwise, the result will be empty.
 method: GET
 body: {}
 parameters: []
