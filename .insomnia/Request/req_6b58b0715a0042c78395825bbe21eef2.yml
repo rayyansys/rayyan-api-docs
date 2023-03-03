@@ -1,0 +1,40 @@
+_id: req_6b58b0715a0042c78395825bbe21eef2
+type: Request
+parentId: fld_eeb62a531f8441478a6d2f536021400d
+modified: 1677773792094
+created: 1676678767426
+url: "{{ _.base_url }}/api/v1/reviews/{{ _.review_id }}/duplicates/"
+name: Duplicates
+description: >-
+  Use this endpoint to trigger a dedup job for a review.
+
+
+  The response indicates whether the job was triggered, and if it wasn't gives the reason as to why.
+
+
+  Additionally, a push notification will be sent to the frontend application once the dedup job is complete. Dedup results data can then be retrieved using the `GET /articles` or `GET /facets` endpoint.
+
+
+  The following are the list of reasons:
+
+
+  - `LIMIT_EXCEEDED`: The review contains more than the 200,000 article limit for reviews. Contact support to run a dedup job on such a review.
+
+  - `JOB_RUNNING`: A dedup job is already running for this review.
+
+  - `SEARCH_REQUIRED`: A search needs to be added or deleted for a dedup job to be triggered.
+method: POST
+body: {}
+parameters: []
+headers: []
+authentication:
+  type: bearer
+  token: "{{ _.manual_token }}"
+metaSortKey: -1643841355037.1992
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

@@ -1,0 +1,75 @@
+_id: req_b0483d6f0ea34b7eba74698e529ae1d1
+type: Request
+parentId: fld_eeb62a531f8441478a6d2f536021400d
+modified: 1677773613598
+created: 1676743495518
+url: "{{ _.base_url }}/api/v1/reviews/{{ _.review_id }}/copy"
+name: Copy
+description: >-
+  Copy articles from one review to another based on specified filters. 
+
+
+  Indiciate the target review to copy by specifying it in the request body:
+
+
+  - `target_review`: (review id to copy to)
+
+
+  Filters are passed in through the request body and are the same as the `GET /results` endpoint, with the exception of the `start`, `length`, `order[0][column]` and `order[0][dir]` attributes, which are not supported for copying reviews.
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+        "target_review": "{{ _.review_id2 }}",
+        "start": 0, 
+        "length": 5,
+        "order[0][column]": 1,
+        "order[0][dir]": "asc",
+        "search[value]": null,
+        "extra": {
+            "article_ids": [],
+            "mode": "undecided",
+            "searches": [],
+            "highlights_1": [],
+            "highlights_2": [],
+            "language": [],
+            "keyphrases": [],
+            "locations": [],
+            "journal": [],
+            "authors": [],
+            "year": [],
+            "publication_types": [],
+            "user_labels": [],
+            "exclusion_labels": [],
+            "abstract_languages": [],
+            "fulltext_types": [],
+            "customized_by": [],
+            "decision_at_least": [],
+            "decision_at_most": [],
+            "dedup_result": [],
+            "dedup_job_id": [],
+            "dedup_result_cluster_id": [],
+            "exact_matches": [],
+            "pico_participants": [],
+            "pico_intervention": [],
+            "pico_control": [],
+            "pico_outcome": []
+        }
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_f43b472486de45e096e256d9543d6942
+authentication:
+  type: bearer
+  token: "{{ _.manual_token }}"
+metaSortKey: -1643841355063.375
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
