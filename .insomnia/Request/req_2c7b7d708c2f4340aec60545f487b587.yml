@@ -1,7 +1,7 @@
 _id: req_2c7b7d708c2f4340aec60545f487b587
 type: Request
-parentId: fld_eeb62a531f8441478a6d2f536021400d
-modified: 1661543624645
+parentId: fld_2d088340f3684e0a9d13115852cacd09
+modified: 1679174316117
 created: 1661288397352
 url: "{{ _.base_url }}/api/v1/reviews/{{ _.review_id
   }}/delete_review_access?user_id={% prompt 'User ID to be revoked', '', '',
@@ -16,7 +16,7 @@ headers: []
 authentication:
   type: bearer
   token: "{{ _.manual_token }}"
-metaSortKey: -1643841355034.0615
+metaSortKey: -1675356335134.5
 isPrivate: false
 settingStoreCookies: true
 settingSendCookies: true

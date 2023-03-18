@@ -1,7 +1,7 @@
 _id: req_6a82544c2f6e48b09c001a63d4758742
 type: Request
-parentId: fld_eeb62a531f8441478a6d2f536021400d
-modified: 1663963041649
+parentId: fld_2d088340f3684e0a9d13115852cacd09
+modified: 1679174325313
 created: 1663258538389
 url: "{{ _.base_url }}/api/v1/reviews/{{ _.review_id }}/update_review_access"
 name: Update Review Access
@@ -44,7 +44,7 @@ headers:
 authentication:
   type: bearer
   token: "{{ _.manual_token }}"
-metaSortKey: -1643841355034.0308
+metaSortKey: -1675356335084.5
 isPrivate: false
 settingStoreCookies: true
 settingSendCookies: true

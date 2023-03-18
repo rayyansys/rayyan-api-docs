@@ -1,7 +1,7 @@
 _id: req_94e5d970585843009cc56dacce8a0d94
 type: Request
-parentId: fld_eeb62a531f8441478a6d2f536021400d
-modified: 1659736887058
+parentId: fld_80bc7ee1b14547dc860545b5af4878c5
+modified: 1679174430609
 created: 1643841355064
 url: "{{ _.base_url }}/api/v1/reviews/{{ _.review_id }}/facets"
 name: Facets
@@ -184,7 +184,7 @@ headers: []
 authentication:
   type: bearer
   token: "{{ _.manual_token }}"
-metaSortKey: -1643841355043
+metaSortKey: -1679174307022
 isPrivate: false
 settingStoreCookies: false
 settingSendCookies: false

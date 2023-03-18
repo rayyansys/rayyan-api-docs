@@ -1,7 +1,7 @@
 _id: req_6b58b0715a0042c78395825bbe21eef2
 type: Request
-parentId: fld_eeb62a531f8441478a6d2f536021400d
-modified: 1677773792094
+parentId: fld_026ab0474798492c884b6949df2bc22b
+modified: 1679174249678
 created: 1676678767426
 url: "{{ _.base_url }}/api/v1/reviews/{{ _.review_id }}/duplicates/"
 name: Duplicates
@@ -30,7 +30,7 @@ headers: []
 authentication:
   type: bearer
   token: "{{ _.manual_token }}"
-metaSortKey: -1643841355037.1992
+metaSortKey: -1679082638694
 isPrivate: false
 settingStoreCookies: true
 settingSendCookies: true

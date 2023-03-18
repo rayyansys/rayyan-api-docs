@@ -1,13 +1,12 @@
 _id: req_c3a247ec8a8c48d8a0ef3cf39cdfb735
 type: Request
-parentId: fld_eeb62a531f8441478a6d2f536021400d
-modified: 1658860455481
+parentId: fld_80bc7ee1b14547dc860545b5af4878c5
+modified: 1679174403991
 created: 1658848365376
 url: "{{ _.base_url }}/api/v1/reviews"
 name: Reviews
-description: >-
-  This endpoint is used to create reviews given certain parameters such as
-  review title, description and metadata attributes.
+description: This endpoint is used to create reviews given certain parameters
+  such as review title, description and metadata attributes.
 method: POST
 body:
   mimeType: application/json
@@ -34,7 +33,7 @@ headers:
 authentication:
   type: bearer
   token: "{{ _.manual_token }}"
-metaSortKey: -1643841355082.75
+metaSortKey: -1679174307272
 isPrivate: false
 settingStoreCookies: true
 settingSendCookies: true
