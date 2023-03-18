@@ -1,0 +1,34 @@
+_id: req_a547dd81fe66467390ac1cf1bfdf33a6
+type: Request
+parentId: fld_4759507078f141fb905f8bf2b6492b81
+modified: 1679175352490
+created: 1679174951193
+url: "{{ _.base_url }}/api/v1/third_party_auth/mendeley_access_token_from_code"
+name: Generate access token from code
+description: |-
+  Generate a valid mendeley access token from an OAuth code.
+
+  params:
+  - `code`: [String] OAuth code which will be used to generate an access token
+
+
+  If the code param not provided a `422` will be rendered.
+method: GET
+body:
+  mimeType: multipart/form-data
+  params: []
+parameters: []
+headers:
+  - name: Content-Type
+    value: multipart/form-data
+authentication:
+  type: bearer
+  token: "{{ _.manual_token }}"
+metaSortKey: -1679174951193
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

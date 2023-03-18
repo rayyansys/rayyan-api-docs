@@ -1,12 +1,11 @@
-_id: req_69905de944434b278dc6e574cceaec72
+_id: req_66c435161f6b4b40af41cd6ba17090e8
 type: Request
 parentId: fld_4759507078f141fb905f8bf2b6492b81
-modified: 1679175570038
-created: 1679174523634
-url: "{{ _.base_url }}/api/v1/third_party_auth/mendeley"
-name: Fetch mendeley auth link
-description: This endpoint will fetch the URL you should redirect the enduser to
-  it to authenticate rayyan with mendeley
+modified: 1679175548315
+created: 1679175364066
+url: "{{ _.base_url }}/api/v1/third_party_auth/mendeley_access_token"
+name: Fetch valid access token
+description: Returns a valid mendeley access token for the logged in user.
 method: GET
 body: {}
 parameters: []
@@ -14,7 +13,7 @@ headers: []
 authentication:
   type: bearer
   token: "{{ _.manual_token }}"
-metaSortKey: -1679175157629.5
+metaSortKey: -1679175054411.25
 isPrivate: false
 settingStoreCookies: true
 settingSendCookies: true
