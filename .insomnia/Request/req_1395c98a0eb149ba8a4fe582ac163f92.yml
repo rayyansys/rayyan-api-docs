@@ -1,0 +1,33 @@
+_id: req_1395c98a0eb149ba8a4fe582ac163f92
+type: Request
+parentId: fld_34cf66c146f245feafa4fe05613ae3ee
+modified: 1679173945444
+created: 1678991081117
+url: "{{ _.base_url }}/api/v1/users"
+name: Delete user's data
+description: >-
+  This endpoint deletes the logged in user account, If successful will schedule
+  a job will run after 30 days which will rewrite user's first, lastname, and
+  email.
+
+
+  The endpoint will return `422` if user has an active subscription, owned review, teams, or owned teams reviews
+method: DELETE
+body: {}
+parameters: []
+headers:
+  - id: pair_e6d6c4555e3b41c1909efe6abab9e214
+    name: Content-Type
+    value: application/json
+    description: ""
+authentication:
+  type: bearer
+  token: "{{ _.manual_token }}"
+metaSortKey: -1678991081117
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

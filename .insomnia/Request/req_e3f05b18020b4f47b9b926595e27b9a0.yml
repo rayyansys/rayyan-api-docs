@@ -1,7 +1,7 @@
 _id: req_e3f05b18020b4f47b9b926595e27b9a0
 type: Request
-parentId: fld_eeb62a531f8441478a6d2f536021400d
-modified: 1646451103147
+parentId: fld_34cf66c146f245feafa4fe05613ae3ee
+modified: 1678992830642
 created: 1643841355061
 url: "{{ _.base_url }}/api/v1/user_info"
 name: Log In and User Info
@@ -31,7 +31,7 @@ authentication:
   clientSecret: "{{ _.client_secret }}"
   redirectUrl: "{{ _.redirect_uri }}"
   usePkce: false
-metaSortKey: -1643841355114
+metaSortKey: -1677177051331.5
 isPrivate: false
 settingStoreCookies: false
 settingSendCookies: false
