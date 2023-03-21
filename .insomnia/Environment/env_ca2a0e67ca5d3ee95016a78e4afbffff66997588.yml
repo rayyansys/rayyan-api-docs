@@ -1,7 +1,7 @@
 _id: env_ca2a0e67ca5d3ee95016a78e4afbffff66997588
 type: Environment
 parentId: wrk_7aa71d7e9efe438b96b31f9cdb58ca36
-modified: 1675366518740
+modified: 1679434704472
 created: 1643841364436
 name: Base Environment
 data:
@@ -21,6 +21,17 @@ data:
     'b64::JA==::46b', 'always', 60 %}"
   manual_token: "{% response 'body', 'req_e3f05b18020b4f47b9b926595e27b9a0',
     'b64::JC5yZXF1ZXN0X3Rva2Vu::46b', 'no-history', 60 %}"
+  team_id: "{% response 'body', 'req_9fada8dad0ed4db6955e3dd6727d8ea1',
+    'b64::JC5pZA==::46b', 'no-history', 60 %}"
+  admin_team_review_id: "{% response 'body',
+    'req_476b8e0d2c58464497df7f557af2c0dc', 'b64::JFswXS5pZA==::46b',
+    'no-history', 60 %}"
+  admin_team_review_search_id: "{% response 'body',
+    'req_8e47a90b29024ece8d92daa5445e009a', 'b64::JFswXS5pZA==::46b',
+    'no-history', 60 %}"
+  admin_team_review_fulltext_id: "{% response 'body',
+    'req_35152ea5a4574cd3802c47caeeb2bbdc', 'b64::JFswXS5pZA==::46b',
+    'no-history', 60 %}"
 dataPropertyOrder:
   "&":
     - authorization_url
@@ -32,6 +43,10 @@ dataPropertyOrder:
     - article3_id
     - note1_id
     - manual_token
+    - team_id
+    - admin_team_review_id
+    - admin_team_review_search_id
+    - admin_team_review_fulltext_id
 color: null
 isPrivate: false
 metaSortKey: 1643841364436

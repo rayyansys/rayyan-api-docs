@@ -1,0 +1,37 @@
+_id: req_9fada8dad0ed4db6955e3dd6727d8ea1
+type: Request
+parentId: fld_aa9ebfcfd51d4d80a9fee93724f1bc03
+modified: 1679348630771
+created: 1679266660434
+url: "{{ _.base_url }}/admin/teams.json"
+name: Create Team
+description: |-
+  Create a team.
+
+  params:
+  name (required): [String] name of the team
+  capacity (required): [Integer] capacity of the team
+method: POST
+body:
+  mimeType: multipart/form-data
+  params: []
+parameters:
+  - id: pair_ce6bef00112c4117959d660b605f2c67
+    name: team[name]
+    value: Team 1
+    description: ""
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_05a1675bf1f8440ab7f33bb948e05fe1
+authentication:
+  type: bearer
+  token: "{{ _.manual_token }}"
+metaSortKey: -1679266660434
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

@@ -1,0 +1,39 @@
+_id: req_85fcba06a185440abf0bec055baf551d
+type: Request
+parentId: fld_03ea312635d5448aa62ec4b98fa36b4a
+modified: 1679439543938
+created: 1679349483226
+url: "{{ _.base_url }}/admin/reviews/{{ _.admin_team_review_id }}.json"
+name: Edit Review
+description: |-
+  This endpoint edits the review
+
+
+  Params:
+
+  `title` (required): [String] review's title
+
+  `description` (optional): [Text] review's description
+method: PUT
+body: {}
+parameters:
+  - id: pair_d18306520f5a450fb71f7ad8f2fa35dd
+    name: title
+    value: Review title
+    description: ""
+  - id: pair_924f600aead642b8a1b1745d15d22604
+    name: description
+    value: description
+    description: ""
+headers: []
+authentication:
+  type: bearer
+  token: "{{ _.manual_token }}"
+metaSortKey: -1679349483226
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
