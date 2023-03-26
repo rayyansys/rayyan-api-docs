@@ -1,7 +1,7 @@
 _id: req_a547dd81fe66467390ac1cf1bfdf33a6
 type: Request
 parentId: fld_4759507078f141fb905f8bf2b6492b81
-modified: 1679175352490
+modified: 1679851690343
 created: 1679174951193
 url: "{{ _.base_url }}/api/v1/third_party_auth/mendeley_access_token_from_code"
 name: Generate access token from code
@@ -12,7 +12,7 @@ description: |-
   - `code`: [String] OAuth code which will be used to generate an access token
 
 
-  If the code param not provided a `422` will be rendered.
+  If the code param isn't provided a `422` will be rendered.
 method: GET
 body:
   mimeType: multipart/form-data

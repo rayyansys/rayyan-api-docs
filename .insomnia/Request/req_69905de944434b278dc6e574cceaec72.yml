@@ -1,24 +1,23 @@
 _id: req_69905de944434b278dc6e574cceaec72
 type: Request
 parentId: fld_4759507078f141fb905f8bf2b6492b81
-modified: 1679441502230
+modified: 1679852250378
 created: 1679174523634
 url: "{{ _.base_url }}/api/v1/third_party_auth/mendeley"
 name: Fetch mendeley auth link
 description: >-
-  This endpoint will fetch the URL you should redirect the enduser to it to
-  authenticate rayyan with mendeley
+  This endpoint will fetch the OAuth URL. You should redirect the end user to
+  this URL to complete linking his Mendeley account with Rayyan.
 
 
+  If you are a mobile client:  
 
-  If your are a mobile client:  
-
-  You should open the link in an in-app browser tab, and check for the http status code for this tab.  
+  You should open the link in an in-app browser tab and check for the HTTP status code for this tab.  
 
 
-  If your are a web client:  
+  If you are a web client:  
 
-  You should open the link in an new tab, and listen when the URL changed to `rayyan.ai` url , then check for the http status code for this tab.
+  You should open the link in a new tab and listen when the URL changes to the `rayyan.ai` URL, then check for the HTTP status code for this tab.
 
 
   ---
@@ -26,9 +25,9 @@ description: >-
   Http status code: 
 
 
-  - If you got `200 OK` you should extract the `code` param from the browser tab and make a request with the code to `Generate access token from code` endpoint.
+  - If you got `200 OK`, you should extract the `code` param from the browser tab and request with the code to `Generate access token from code` endpoint.
 
-  - If you got `204 Created`  it's means that an access token has already generated and no need to capture the `code` and no need to call `Generate access token from code` endpoint, instead you should call `Fetch valid access token` to get a valid access token.
+  - If you got `201 Created`, it means that Rayyan already generated an access token, and there is no need to capture the `code` and call the `Generate access token from code` endpoint. Instead, you should call the `Fetch valid access token` to get a valid access token.
 method: GET
 body: {}
 parameters: []
