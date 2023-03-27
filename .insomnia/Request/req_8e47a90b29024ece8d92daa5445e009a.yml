@@ -1,7 +1,7 @@
 _id: req_8e47a90b29024ece8d92daa5445e009a
 type: Request
 parentId: fld_19283578733f4613812ca1aa6ca833c2
-modified: 1679439495044
+modified: 1679875620303
 created: 1679349508290
 url: "{{ _.base_url }}/admin/searches.json"
 name: List Searches
@@ -13,7 +13,8 @@ description: >-
 
   you can filter on `name`(String), `total`(Integer), `fetched`(Integer), and `invalid_results`(Integer)
 
-  filters are combined using ORing.
+
+  Filters when combined an `OR` operator is applied.
 
 
   The endpoint supports [Ransack's search matchers](https://activerecord-hackery.github.io/ransack/getting-started/search-matches/)

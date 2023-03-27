@@ -1,11 +1,11 @@
 _id: req_f0b85aa458084f52829887011ccda721
 type: Request
 parentId: fld_81a46d9eddc54a6397fa14aa7d913927
-modified: 1679434741561
+modified: 1679875679798
 created: 1679349451962
 url: "{{ _.base_url }}/admin/fulltexts/{{ _.admin_team_review_fulltext_id }}.json"
 name: Delete Fulltext
-description: ""
+description: Delete a fulltext
 method: DELETE
 body: {}
 parameters: []
