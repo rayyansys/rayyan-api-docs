@@ -1,7 +1,7 @@
 _id: req_412e42fc049649b6ab83cc8625266c21
 type: Request
-parentId: fld_eeb62a531f8441478a6d2f536021400d
-modified: 1646419331536
+parentId: fld_34cf66c146f245feafa4fe05613ae3ee
+modified: 1678992586923
 created: 1643841355058
 url: "{{ _.base_url }}/oauth/revoke"
 name: Revoke Token (No effect)
@@ -15,10 +15,14 @@ headers:
   - name: Content-Type
     value: application/json
     id: pair_e3e4c72cde664c7984b0bc4e270625b8
+  - id: pair_8d3d57a15cbe4872927bfa654cbec01f
+    name: ""
+    value: ""
+    description: ""
 authentication:
   type: bearer
   token: "{{ _.manual_token }}"
-metaSortKey: -1643841355000
+metaSortKey: -1677177051281.5
 isPrivate: false
 settingStoreCookies: false
 settingSendCookies: false

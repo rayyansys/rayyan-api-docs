@@ -1,7 +1,7 @@
 _id: req_b0483d6f0ea34b7eba74698e529ae1d1
 type: Request
-parentId: fld_eeb62a531f8441478a6d2f536021400d
-modified: 1677773613598
+parentId: fld_80bc7ee1b14547dc860545b5af4878c5
+modified: 1679174419226
 created: 1676743495518
 url: "{{ _.base_url }}/api/v1/reviews/{{ _.review_id }}/copy"
 name: Copy
@@ -65,7 +65,7 @@ headers:
 authentication:
   type: bearer
   token: "{{ _.manual_token }}"
-metaSortKey: -1643841355063.375
+metaSortKey: -1679174307203.25
 isPrivate: false
 settingStoreCookies: true
 settingSendCookies: true

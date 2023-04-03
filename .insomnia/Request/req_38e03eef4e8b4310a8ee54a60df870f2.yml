@@ -1,7 +1,7 @@
 _id: req_38e03eef4e8b4310a8ee54a60df870f2
 type: Request
-parentId: fld_eeb62a531f8441478a6d2f536021400d
-modified: 1646347583848
+parentId: fld_80bc7ee1b14547dc860545b5af4878c5
+modified: 1679174425064
 created: 1643841355056
 url: "{{ _.base_url }}/api/v1/reviews/{{ _.review_id }}/customize"
 name: Bulk Customize
@@ -54,7 +54,7 @@ headers:
 authentication:
   type: bearer
   token: "{{ _.manual_token }}"
-metaSortKey: -1643841355061.75
+metaSortKey: -1679174307122
 isPrivate: false
 settingStoreCookies: false
 settingSendCookies: false

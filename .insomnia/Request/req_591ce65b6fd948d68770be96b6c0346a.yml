@@ -1,7 +1,7 @@
 _id: req_591ce65b6fd948d68770be96b6c0346a
 type: Request
-parentId: fld_eeb62a531f8441478a6d2f536021400d
-modified: 1661870574161
+parentId: fld_80bc7ee1b14547dc860545b5af4878c5
+modified: 1679174470583
 created: 1661284871451
 url: "{{ _.base_url }}/api/v1/reviews/{{ _.review_id }}/invite"
 name: Invite
@@ -46,7 +46,7 @@ headers:
 authentication:
   type: bearer
   token: "{{ _.manual_token }}"
-metaSortKey: -1643841355034.4922
+metaSortKey: -1679174306772
 isPrivate: false
 settingStoreCookies: true
 settingSendCookies: true
