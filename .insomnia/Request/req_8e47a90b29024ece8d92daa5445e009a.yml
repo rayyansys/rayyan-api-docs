@@ -1,0 +1,35 @@
+_id: req_8e47a90b29024ece8d92daa5445e009a
+type: Request
+parentId: fld_19283578733f4613812ca1aa6ca833c2
+modified: 1679875620303
+created: 1679349508290
+url: "{{ _.base_url }}/admin/searches.json"
+name: List Searches
+description: >-
+  This endpoint lists the owned teams reviews' searches.
+
+
+  Filters:
+
+  you can filter on `name`(String), `total`(Integer), `fetched`(Integer), and `invalid_results`(Integer)
+
+
+  Filters when combined an `OR` operator is applied.
+
+
+  The endpoint supports [Ransack's search matchers](https://activerecord-hackery.github.io/ransack/getting-started/search-matches/)
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication:
+  type: bearer
+  token: "{{ _.manual_token }}"
+metaSortKey: -1679349508290
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
