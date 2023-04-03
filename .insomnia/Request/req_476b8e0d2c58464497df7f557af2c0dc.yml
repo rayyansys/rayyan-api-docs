@@ -1,7 +1,7 @@
 _id: req_476b8e0d2c58464497df7f557af2c0dc
 type: Request
 parentId: fld_03ea312635d5448aa62ec4b98fa36b4a
-modified: 1679875599512
+modified: 1680564507249
 created: 1679349517346
 url: "{{ _.base_url }}/admin/reviews.json"
 name: List Reviews
@@ -14,7 +14,7 @@ description: >-
   you can filter on `title`(String), `description`(Text), `total_articles`(Integer), and `is_blind`(Boolean)
 
 
-  Filters when combined an `OR` operator is applied.
+  Filters when combined, an `OR` operator is applied.
 
 
   The endpoint supports [Ransack's search matchers](https://activerecord-hackery.github.io/ransack/getting-started/search-matches/)
