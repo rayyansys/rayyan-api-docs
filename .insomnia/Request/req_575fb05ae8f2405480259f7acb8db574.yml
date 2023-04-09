@@ -1,13 +1,38 @@
 _id: req_575fb05ae8f2405480259f7acb8db574
 type: Request
 parentId: fld_aa9ebfcfd51d4d80a9fee93724f1bc03
-modified: 1679349422938
+modified: 1681059582592
 created: 1679264869977
 url: "{{ _.base_url }}/admin/teams.json"
 name: List Teams
-description: |+
+description: >
   List teams for the current user.
 
+
+  Pagination:
+
+  - Page size: 30
+
+  - You can pass `page` param to fetch a specific page
+
+
+  Sorting:
+   You can pass `order` param to sort `ASC` or `DESC` on the following keys:
+   - id
+   - name
+   - capacity
+   - created_at
+   - updated_at
+    
+   If you want to order on id and ascending, you should pass `order` param with value: `id_asc`
+   
+   Scoping:
+   You can pass `scope` param to filter the results, if not `all` scope will be applied.
+   
+   Avaiable scopes:
+   
+   - All: `scope` = `all`
+   - Deleted teams: `scope` = `deleted_teams` 
 method: GET
 body: {}
 parameters: []

@@ -1,23 +1,62 @@
 _id: req_476b8e0d2c58464497df7f557af2c0dc
 type: Request
 parentId: fld_03ea312635d5448aa62ec4b98fa36b4a
-modified: 1680564507249
+modified: 1681059613401
 created: 1679349517346
 url: "{{ _.base_url }}/admin/reviews.json"
 name: List Reviews
-description: >-
+description: >+
   This endpoint lists the owned teams reviews for the current user.
 
 
   Filters:
 
-  you can filter on `title`(String), `description`(Text), `total_articles`(Integer), and `is_blind`(Boolean)
 
+  you can filter on `title`(String), `description`(Text), `total_articles`(Integer), and `is_blind`(Boolean).
 
   Filters when combined, an `OR` operator is applied.
 
 
   The endpoint supports [Ransack's search matchers](https://activerecord-hackery.github.io/ransack/getting-started/search-matches/)
+
+
+  Pagination:
+
+  - Page size: 30
+
+  - You can pass `page` param to fetch a specific page
+
+
+  Sorting:
+   You can pass `order` param to sort `ASC` or `DESC` on the following keys:
+   - id
+   - rayyan_store_enabled
+   - title
+   - created_at
+   - updated_at
+   - total_articles
+   - is_blind
+   - archived_at
+   - accessed_at
+   
+   If you want to order on id and ascending, you should pass `order` param with value: `id_asc`
+   
+   Scoping:
+   You can pass `scope` param to filter the results, if not `all` scope will be applied.
+   
+   Avaiable scopes:
+   
+   - All: `scope` = `all`
+   - Live reviews: `scope` = `live_reviews`
+   - Rayyan store reviews: `scope` = `rayyan_store_reviews`
+   - Rayyan store live reviews: `scope` = `rayyan_store_live_reviews`
+   - Solr reviews: `scope` = `solr_reviews`
+   - Solr live reviews: `scope` = `solr_live_reviews`
+   - Auto archived reviews: `scope` = `auto_archived_reviews`
+   - Manually archived reviews: `scope` = `manually_archived_reviews`
+   - Deleted reviews: `scope` = `deleted_reviews`
+   - Accessed at yesterday reviews: `scope` = `accessed_at_yesterday_reviews`
+   
 method: GET
 body: {}
 parameters:

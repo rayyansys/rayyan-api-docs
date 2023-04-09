@@ -1,23 +1,61 @@
 _id: req_8e47a90b29024ece8d92daa5445e009a
 type: Request
 parentId: fld_19283578733f4613812ca1aa6ca833c2
-modified: 1680564520514
+modified: 1681059630970
 created: 1679349508290
 url: "{{ _.base_url }}/admin/searches.json"
 name: List Searches
-description: >-
+description: >+
   This endpoint lists the owned teams reviews' searches.
 
 
   Filters:
 
-  you can filter on `name`(String), `total`(Integer), `fetched`(Integer), and `invalid_results`(Integer)
-
+  you can filter on `name`(String), `total`(Integer), `fetched`(Integer), and `invalid_results`(Integer).
 
   Filters when combined, an `OR` operator is applied.
 
 
   The endpoint supports [Ransack's search matchers](https://activerecord-hackery.github.io/ransack/getting-started/search-matches/)
+
+
+  Pagination:
+
+  - Page size: 30
+
+  - You can pass `page` param to fetch a specific page
+
+
+  Sorting:
+   You can pass `order` param to sort `ASC` or `DESC` on the following keys:
+   - id
+   - kind
+   - created_at
+   - updated_at
+   - name
+   - total
+   - fetched
+   - invalid_resutls
+   
+   If you want to order on id and ascending, you should pass `order` param with value: `id_asc`
+   
+   Scoping:
+   You can pass `scope` param to filter the results, if not `all` scope will be applied.
+   
+   Avaiable scopes:
+   
+   - All: `scope` = `all`
+   - Reffile searches: `scope` = `reffile_searches`
+   - Mendeley searches: `scope` = `mendeley_searches`
+   - Copy searches: `scope` = `copy_searches`
+   - Copy searches: `scope` = `copy_searches`
+   - Copy searches: `scope` = `copy_searches`
+   - Succeeded searches: `scope` = `succeeded_searches`
+   - Failed searches: `scope` = `failed_searches`
+   - Deleted searches: `scope` = `deleted_searches`
+   
+   
+
 method: GET
 body: {}
 parameters: []
