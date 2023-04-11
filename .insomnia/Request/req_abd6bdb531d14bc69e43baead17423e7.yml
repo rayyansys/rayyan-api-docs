@@ -1,0 +1,42 @@
+_id: req_abd6bdb531d14bc69e43baead17423e7
+type: Request
+parentId: fld_aa9ebfcfd51d4d80a9fee93724f1bc03
+modified: 1679321498304
+created: 1679266885792
+url: "{{ _.base_url }}/admin/teams/{{ _.team_id }}.json"
+name: Update Team
+description: |-
+  This endpoint updates the team
+
+  params:
+  id: (required) [Integer] id of the team
+  name: (required) [String] name of the team
+  capacity: (required)
+method: PUT
+body: {}
+parameters:
+  - id: pair_0240956335d44b5eaa9d449fcf5f9e82
+    name: team[name]
+    value: "Team new name "
+    description: ""
+    disabled: false
+  - id: pair_5105bcc47e914ca08a2efa90c9e8646b
+    name: team[capacity]
+    value: "4"
+    description: ""
+  - id: pair_060e3f39f5a145ac84101ada8f0428ca
+    name: team[new_collaborator_emails]
+    value: collaborator1@example,collaborator2@example.com
+    description: ""
+headers: []
+authentication:
+  type: bearer
+  token: "{{ _.manual_token }}"
+metaSortKey: -1679266885792
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

@@ -1,0 +1,23 @@
+_id: req_3a8bfc08dc7740d9b99067979786477f
+type: Request
+parentId: fld_03ea312635d5448aa62ec4b98fa36b4a
+modified: 1680564487457
+created: 1679436715689
+url: "{{ _.base_url }}/admin/reviews/{{ _.admin_team_review_id }}/unarchive.json"
+name: Unarchive
+description: Restore the given archived review
+method: POST
+body: {}
+parameters: []
+headers: []
+authentication:
+  type: bearer
+  token: "{{ _.manual_token }}"
+metaSortKey: -1679436715689
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

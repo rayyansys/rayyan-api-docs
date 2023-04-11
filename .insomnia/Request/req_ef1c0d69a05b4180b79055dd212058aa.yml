@@ -1,0 +1,27 @@
+_id: req_ef1c0d69a05b4180b79055dd212058aa
+type: Request
+parentId: fld_aa9ebfcfd51d4d80a9fee93724f1bc03
+modified: 1679321406061
+created: 1679267709975
+url: "{{ _.base_url }}/admin/teams/{{ _.team_id }}.json"
+name: Delete Team
+description: |-
+  This endpoint deletes the team
+
+  params:
+  id: [Integer] the id of the team to be deleted.
+method: DELETE
+body: {}
+parameters: []
+headers: []
+authentication:
+  type: bearer
+  token: "{{ _.manual_token }}"
+metaSortKey: -1679267709975
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

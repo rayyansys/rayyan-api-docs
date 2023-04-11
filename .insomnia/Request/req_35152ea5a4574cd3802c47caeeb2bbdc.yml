@@ -1,0 +1,59 @@
+_id: req_35152ea5a4574cd3802c47caeeb2bbdc
+type: Request
+parentId: fld_81a46d9eddc54a6397fa14aa7d913927
+modified: 1681059649082
+created: 1679349499202
+url: "{{ _.base_url }}/admin/fulltexts.json"
+name: List Fulltexts
+description: "List all fultexts for the current user owned teams reviews.
+
+
+  Pagination:
+
+  - Page size: 30
+
+  - You can pass `page` param to fetch a specific page
+
+
+  Sorting:
+
+  \ You can pass `order` param to sort `ASC` or `DESC` on the following keys:
+
+  \ - id
+
+  \\ 
+
+  \ If you want to order on id and ascending, you should pass `order` param
+  with value: `id_asc`
+
+  \\ 
+
+  \ Scoping:
+
+  \ You can pass `scope` param to filter the results, if not `all` scope will
+  be applied.
+
+  \\ 
+
+  \ Avaiable scopes:
+
+  \ - All: `scope` = `all`
+
+  \ - Deleted fulltexts: `scope` = `deleted_fulltexts`
+
+  \ "
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication:
+  type: bearer
+  token: "{{ _.manual_token }}"
+metaSortKey: -1679349499202
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

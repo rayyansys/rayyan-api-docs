@@ -1,0 +1,23 @@
+_id: req_893f198f8bc149eb9454248ad2f8cb79
+type: Request
+parentId: fld_19283578733f4613812ca1aa6ca833c2
+modified: 1679439513758
+created: 1679348898939
+url: "{{ _.base_url }}/admin/searches/{{ _.admin_team_review_search_id }}.json"
+name: Show Search
+description: This endpoint shows a given search
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication:
+  type: bearer
+  token: "{{ _.manual_token }}"
+metaSortKey: -1679348898939
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

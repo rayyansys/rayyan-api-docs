@@ -19,6 +19,7 @@ description: >+
   	- 2 = NO (article is not a duplicate)
 
 
+
   	
   - `isDeletedArticle`: Deprecated attribute, always set this to `false` or don't specify it at all.
 
