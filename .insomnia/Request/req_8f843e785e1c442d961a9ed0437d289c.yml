@@ -1,0 +1,37 @@
+_id: req_8f843e785e1c442d961a9ed0437d289c
+type: Request
+parentId: fld_80bc7ee1b14547dc860545b5af4878c5
+modified: 1681910084632
+created: 1681907101878
+url: "{{ _.base_url }}/api/v1/reviews/{{ _.review_id }}/autoresolve"
+name: Auto Resolve
+description: >-
+  This endpoint triggerrs an `autoresolve` job for the given review
+
+
+
+  Params:
+
+  - `autoresolve_percentage` (int) value should be between `0` and `99`
+
+
+  Rayyan will delete the possible duplicate articles having a confidence score greater than or equal to the that threshold
+method: POST
+body:
+  mimeType: application/json
+  text: '{"autoresolve_percentage": "95"}'
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication:
+  type: bearer
+  token: "{{ _.manual_token }}"
+metaSortKey: -1679174306947
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

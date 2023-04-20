@@ -1,0 +1,38 @@
+_id: req_8ed2f5bc95e24396af82fbc0420b79d2
+type: Request
+parentId: fld_4a309c10b7ae4963b8f7c5570d6f23fe
+modified: 1681921355815
+created: 1681921278754
+url: "{{ _.base_url }}/api/v1/fulltexts/get_presigned_post"
+name: Fulltexts Pre-Signed URL
+description: >-
+  Endpoint for generating a pre-signed URL to upload fulltexts to S3.
+
+
+  The validity of the URL is **one hour** from time of creation. Additionally, 
+
+  multiple files can be uploaded to the same pre-signed URL where it acts as a prefix (folder).
+
+
+  Uploading a file successfully to the URL returns a 201 HTTP response. 
+
+
+  Uploading a file using an expired URL returns a 400 HTTP response.
+
+
+  For more information about pre-signed URLs, read the AWS documentation [here](https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-presigned-url.html).
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication:
+  type: bearer
+  token: "{{ _.manual_token }}"
+metaSortKey: -1681921278754
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

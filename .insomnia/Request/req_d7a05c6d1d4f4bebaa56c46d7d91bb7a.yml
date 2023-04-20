@@ -1,0 +1,24 @@
+_id: req_d7a05c6d1d4f4bebaa56c46d7d91bb7a
+type: Request
+parentId: fld_4a309c10b7ae4963b8f7c5570d6f23fe
+modified: 1681965095693
+created: 1681965067585
+url: "{{ _.base_url }}/api/v1/fulltexts/{% response 'body',
+  'req_269890eb42284f299fa166e939a6b566', 'b64::JC5pZA==::46b', 'never', 60 %}"
+name: Delete Fulltext
+description: ""
+method: DELETE
+body: {}
+parameters: []
+headers: []
+authentication:
+  type: bearer
+  token: "{{ _.manual_token }}"
+metaSortKey: -1681965067585
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

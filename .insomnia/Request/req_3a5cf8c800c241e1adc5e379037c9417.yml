@@ -1,0 +1,68 @@
+_id: req_3a5cf8c800c241e1adc5e379037c9417
+type: Request
+parentId: fld_4a309c10b7ae4963b8f7c5570d6f23fe
+modified: 1681964157694
+created: 1681921383211
+url: "{% response 'body', 'req_8ed2f5bc95e24396af82fbc0420b79d2',
+  'b64::JC51cmw=::46b', 'never', 60 %}"
+name: Upload Fulltext File to S3
+description: ""
+method: POST
+body:
+  mimeType: multipart/form-data
+  params:
+    - id: pair_01985ca80d6e4e2c9e1bc1b88be1e46a
+      name: x-amz-credential
+      value: "{% response 'body', 'req_8ed2f5bc95e24396af82fbc0420b79d2',
+        'b64::JC5maWVsZHMueC1hbXotY3JlZGVudGlhbA==::46b', 'never', 60 %}"
+      description: ""
+    - id: pair_ee53b43b752f42d1a7303ea7acb7587e
+      name: x-amz-algorithm
+      value: "{% response 'body', 'req_8ed2f5bc95e24396af82fbc0420b79d2',
+        'b64::JC5maWVsZHMueC1hbXotYWxnb3JpdGht::46b', 'never', 60 %}"
+      description: ""
+    - id: pair_b7afec390d274552b6ab398ed45a3460
+      name: x-amz-date
+      value: "{% response 'body', 'req_8ed2f5bc95e24396af82fbc0420b79d2',
+        'b64::JC5maWVsZHMueC1hbXotZGF0ZQ==::46b', 'never', 60 %}"
+      description: ""
+    - id: pair_cff131600d32496885984920655a581e
+      name: x-amz-signature
+      value: "{% response 'body', 'req_8ed2f5bc95e24396af82fbc0420b79d2',
+        'b64::JC5maWVsZHMueC1hbXotc2lnbmF0dXJl::46b', 'never', 60 %}"
+      description: ""
+    - id: pair_3c47be80bde744a591d2d849f20786cc
+      name: key
+      value: "{% response 'body', 'req_8ed2f5bc95e24396af82fbc0420b79d2',
+        'b64::JC5maWVsZHMua2V5::46b', 'never', 60 %}"
+      description: ""
+    - id: pair_3cbc36379eae4ed9a134e4791c5dd9d0
+      name: policy
+      value: "{% response 'body', 'req_8ed2f5bc95e24396af82fbc0420b79d2',
+        'b64::JC5maWVsZHMucG9saWN5::46b', 'never', 60 %}"
+      description: ""
+    - id: pair_2226a09842bd4f21af6a0ad97fdb3c3b
+      name: success_action_status
+      value: "{% response 'body', 'req_8ed2f5bc95e24396af82fbc0420b79d2',
+        'b64::JC5maWVsZHMuc3VjY2Vzc19hY3Rpb25fc3RhdHVz::46b', 'never', 60 %}"
+      description: ""
+    - id: pair_ee50fadd0522413eb4891b4680f946f7
+      name: file
+      value: ""
+      description: ""
+      type: file
+      multiline: false
+      fileName: C:\Users\maboelnour\Downloads\gibson.jpg
+parameters: []
+headers:
+  - name: Content-Type
+    value: multipart/form-data
+authentication: {}
+metaSortKey: -1681921383211
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
