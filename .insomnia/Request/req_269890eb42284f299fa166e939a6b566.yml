@@ -12,7 +12,7 @@ description: |-
 
   It takes 5 arguments, passed through the request body inside `upload` params:
 
-  `s3_key`: The S3 URL pointing to the search file.  
+  `s3_key`: The S3 URL pointing to the fulltext.  
   `original_filename`: The original filename of the fulltext.
   `article_id`: The article id for this fulltext  
   `is_public`: should be false   
