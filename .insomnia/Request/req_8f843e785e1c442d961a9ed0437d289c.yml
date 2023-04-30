@@ -12,7 +12,7 @@ description: >-
 
   Params:
 
-  - `autoresolve_percentage` (int) value should be between `0` and `99`
+  - `autoresolve_percentage` (int) value should be between `0` and `100`, inclusive.
 
 
   Rayyan will delete the possible duplicate articles having a confidence score greater than or equal to the that threshold
