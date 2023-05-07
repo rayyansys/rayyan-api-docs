@@ -1,12 +1,12 @@
 _id: req_3a5cf8c800c241e1adc5e379037c9417
 type: Request
 parentId: fld_4a309c10b7ae4963b8f7c5570d6f23fe
-modified: 1681964157694
+modified: 1683467168068
 created: 1681921383211
 url: "{% response 'body', 'req_8ed2f5bc95e24396af82fbc0420b79d2',
   'b64::JC51cmw=::46b', 'never', 60 %}"
 name: Upload Fulltext File to S3
-description: ""
+description: Upload a fulltext file to S3.
 method: POST
 body:
   mimeType: multipart/form-data
@@ -46,13 +46,11 @@ body:
       value: "{% response 'body', 'req_8ed2f5bc95e24396af82fbc0420b79d2',
         'b64::JC5maWVsZHMuc3VjY2Vzc19hY3Rpb25fc3RhdHVz::46b', 'never', 60 %}"
       description: ""
-    - id: pair_ee50fadd0522413eb4891b4680f946f7
+    - id: pair_8e01d4e4beb040d2b3f4b916d86bbddf
       name: file
       value: ""
       description: ""
       type: file
-      multiline: false
-      fileName: C:\Users\maboelnour\Downloads\gibson.jpg
 parameters: []
 headers:
   - name: Content-Type

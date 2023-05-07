@@ -1,7 +1,7 @@
 _id: req_8f843e785e1c442d961a9ed0437d289c
 type: Request
 parentId: fld_80bc7ee1b14547dc860545b5af4878c5
-modified: 1681910084632
+modified: 1683466978892
 created: 1681907101878
 url: "{{ _.base_url }}/api/v1/reviews/{{ _.review_id }}/autoresolve"
 name: Auto Resolve
@@ -16,6 +16,9 @@ description: >-
 
 
   Rayyan will delete the possible duplicate articles having a confidence score greater than or equal to the that threshold
+
+
+  Once the job is done, a Pusher event will be sent out.
 method: POST
 body:
   mimeType: application/json
