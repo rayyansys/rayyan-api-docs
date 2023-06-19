@@ -1,9 +1,9 @@
 _id: req_bf7bbf1099e24b5cbf6344dfb83588b6
 type: Request
 parentId: fld_80bc7ee1b14547dc860545b5af4878c5
-modified: 1679174407625
+modified: 1685492453417
 created: 1667578354892
-url: "{{ _.base_url }}/api/v1/reviews/{{ _.review_id }}/"
+url: "{{ _.base_url }}/api/v1/reviews/1227"
 name: Reviews Show
 description: >-
   Use this endpoint to retrieve metadata information about a review.

@@ -1,7 +1,7 @@
 _id: req_4c2671d88de34e3786a95198a1b3fec3
 type: Request
 parentId: fld_80bc7ee1b14547dc860545b5af4878c5
-modified: 1679174410570
+modified: 1687181241389
 created: 1643841355063
 url: "{{ _.base_url }}/api/v1/reviews/{{ _.review_id }}/articles"
 name: Articles
@@ -47,7 +47,8 @@ description: >
     locations:          // <Array> An Array containing the locations pertaining to the article.
     publication_types:  // <Array> An Array of publication types for the article.
     year:               // <Integer> The year in which the article was published.
-    abstract_languages  // <Array> An Array of languages that the article abstracts can have.
+    abstract_languages: // <Array> An Array of languages that the article abstracts can have.
+    user_notes:         // <Array> An Array of article' notes created by the users.
   }
 
   ```
