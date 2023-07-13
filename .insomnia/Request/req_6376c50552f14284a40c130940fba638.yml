@@ -1,7 +1,7 @@
 _id: req_6376c50552f14284a40c130940fba638
 type: Request
 parentId: fld_80bc7ee1b14547dc860545b5af4878c5
-modified: 1687182015546
+modified: 1689252817302
 created: 1643841355063
 url: "{{ _.base_url }}/api/v1/reviews"
 name: Reviews
@@ -22,7 +22,7 @@ description: >
   	- `archived`, the endpoint will return the archived reviews.
 
   - `page`: Pagination param, when:
-  	- `page` value is greater than `0`, the endpoint returns the specified page with page's length is `5`
+  	- `page` value is greater than `0`, the endpoint returns the specified page with page's length is `10`
   	- `page` is left blank and the `archive_state` is `live`, the endpoint will return all live reviews.
   	- `page` is left blank and the `archive_state` is `archived`, the endpoint will return the first page of archived reviews.  
 
