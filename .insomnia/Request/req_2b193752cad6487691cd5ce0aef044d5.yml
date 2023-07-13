@@ -1,13 +1,13 @@
 _id: req_2b193752cad6487691cd5ce0aef044d5
 type: Request
 parentId: fld_80bc7ee1b14547dc860545b5af4878c5
-modified: 1687182853229
+modified: 1689252964026
 created: 1687182078953
 url: "{{ _.base_url }}/api/v1/reviews/{{ _.review_id }}/customize_by_filter"
 name: Customize by filter
 description: >
-  Thiss endpoint takes a filter parameters which apply it to get certain
-  review's articles and apply a certain customization on it.
+  This endpoint takes a filter parameter, which is applied to retrieve specific
+  review articles and apply a particular customization to them.
 
 
   All the customization are done in a background job, so the return status will be `ok` which means that the customization job was enqueued successfully.
