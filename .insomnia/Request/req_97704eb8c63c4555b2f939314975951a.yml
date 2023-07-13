@@ -1,12 +1,12 @@
 _id: req_97704eb8c63c4555b2f939314975951a
 type: Request
 parentId: fld_4a309c10b7ae4963b8f7c5570d6f23fe
-modified: 1683467301529
+modified: 1689254565749
 created: 1681964981137
 url: "{{ _.base_url }}/api/v1/fulltexts/{% response 'body',
   'req_269890eb42284f299fa166e939a6b566', 'b64::JC5pZA==::46b', 'never', 60 %}"
 name: Fulltext
-description: Fetch a certain fulltext by id
+description: Fetch a certain fulltext given a fulltext id
 method: GET
 body: {}
 parameters: []
