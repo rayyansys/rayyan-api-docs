@@ -21,19 +21,19 @@ description: "List all fultexts for the current user owned teams reviews.
 
   \ - id
 
-  \\ 
+  \\
 
   \ If you want to order on id and ascending, you should pass `order` param
   with value: `id_asc`
 
-  \\ 
+  \\
 
   \ Scoping:
 
   \ You can pass `scope` param to filter the results, if not `all` scope will
   be applied.
 
-  \\ 
+  \\
 
   \ Avaiable scopes:
 
