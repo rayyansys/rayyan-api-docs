@@ -1,0 +1,28 @@
+_id: req_3429270d219b46f8b7c6590a0ec0c6ac
+type: Request
+parentId: fld_80bc7ee1b14547dc860545b5af4878c5
+modified: 1690474727059
+created: 1690417154942
+url: "{{ _.base_url }}/api/v1/reviews/{{ _.review_id }}/prisma"
+name: Prisma
+description: "Endpoint to return prisma mapping hash, its behavior depends on feature flag :prisma"
+method: GET
+body: {}
+parameters: []
+headers:
+  - id: pair_70739838651447dfb8d681161a824a36
+    name: Authorization
+    value: ""
+    description: ""
+    disabled: true
+authentication:
+  type: bearer
+  token: "{{ _.manual_token }}"
+metaSortKey: -1690417154942
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: false
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
