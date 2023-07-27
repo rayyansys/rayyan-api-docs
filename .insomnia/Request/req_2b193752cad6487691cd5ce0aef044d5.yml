@@ -1,7 +1,7 @@
 _id: req_2b193752cad6487691cd5ce0aef044d5
 type: Request
 parentId: fld_80bc7ee1b14547dc860545b5af4878c5
-modified: 1689252964026
+modified: 1690475120991
 created: 1687182078953
 url: "{{ _.base_url }}/api/v1/reviews/{{ _.review_id }}/customize_by_filter"
 name: Customize by filter
@@ -16,60 +16,10 @@ description: >
   Params:
 
 
-  - `extra`: This is a dictionary that contains facet-based filter parameters, which are described below. Parameters ending with `[]` can contain multiple values.
-      - `article_ids`: Filter based on ids.
-      - `mode`: Filter based on inclusion decision. Values can be `undecided`, `maybe`, `included`  `excluded` or `conflict` if the review blind mode is currently off.
-      - `searches[]`: Filter using search ids.
-      - `highlights_1[]`: Filter based on inclusion highlight keyword.
-      - `highlights_2[]`: Filter based on exclusion highlight keyword.
-      - `language[]`: Filter based on article language.
-      - `keyphrases[]`: Filter based on associated keywords, i.e. values from the “topics” facet.
-      - `locations[]`: Filters based on location of publication.
-      - `journal[]`: Filters based on journal of publication.
-      - `authors[]`: Filter based on listed authors.
-      - `year[]`: Filter based on year of publication.
-      - `publication_types[]` : Filter based on publication type.
-      - `user_labels[]`: Filter based on inserted user labels.
-      - `exclusion_labels[]`: Filter based on inserted exclusion labels.
-      - `abstract_languages[]`: Filter based on the abstract languages.
-      - `fulltext_types[]`: Filter based on uploaded full-text types. Values can be `pr` for private, `pu` for public.
-      - `customized_by[]`: Filter based on decisions made by users by specifiying user ids. If omitted, defaults to all users currently in the review.
-      - `decision_at_least`: Filter based on minimum collaborator decisions.
-      - `decision_at_most`: Filter based on maximum collaborator decisions.
-      - `dedup_result`: Filter based on dedup results. If not specified, retrieves all articles except those with the `deleted` dedup result. Values can be:
-          - 0 = unresolved
-          - 1 = deleted
-          - 2 = not duplicates
-          - 3 = resolved
-  				- all = retrieves all articles irrespective of dedup results.
-      - `dedup_job_id`: Filter based on dedup job id.
-      - `dedup_result_cluster_id`: Filter based on dedup result cluster id.
-      - `exact_matches[]`: Filter based on the number of exact matches hits.
-      - `pico_participants[]`: Filter based on PICO population keywords.
-      - `pico_intervention[]`: Filter based on PICO intervention keywords.
-      - `pico_control[]`: Filter based on PICO control keywords.
-      - `pico_outcome[]`: Filter based on PICO outcome keywords.
-
-  		
-  - `plan`
+  - `extra`: This is a dictionary that contains facet-based filter parameters, which are described below. Parameters ending with `[]` can contain multiple values. You can refer to `extra` param inside `Get Articles` action.
 
 
-  A plan is a hash with multiple keys and values denoting types of customizations to be made to the article. Details on the various customization types and their keys and values are provided next.
-
-  	- Customization types
-  		The following describes the various types of customizations and their keys and values:
-
-  	- Inclusion decisions:
-  		key is always "included".
-  		value is 1 if inclusion, -1 if exclusion, and 0 if maybe.
-
-  	- Labels:
-  		key is the label itself, eg: "Relevant study" or "Matches previous article".
-  		value is 1 for adding a label, and -1 for removing a label.
-
-  	- Exclusion Reasons
-  		key is the reason itself, prefixed with __EXR__, for eg: "__EXR__wrong outcome" or "__EXR__wrong drug".
-  		value is 1 for adding a reason, and -1 for removing a reason.
+  - `plan`: A plan is a hash with multiple keys and values denoting types of customizations to be made to the article. Details on the various customization types and their keys and values are provided in `Customization types` section inside `POST Customize` action.
 method: POST
 body: {}
 parameters: []
