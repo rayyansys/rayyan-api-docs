@@ -1,7 +1,7 @@
 _id: req_2b193752cad6487691cd5ce0aef044d5
 type: Request
 parentId: fld_80bc7ee1b14547dc860545b5af4878c5
-modified: 1690727871969
+modified: 1690728058822
 created: 1687182078953
 url: "{{ _.base_url }}/api/v1/reviews/{{ _.review_id }}/customize_by_filter"
 name: Customize by filter
@@ -16,7 +16,7 @@ description: >
   Params:
 
 
-  - `extra`: This is a dictionary that contains facet-based filter parameters. Parameters ending with `[]` can contain multiple values. You can refer to `extra` param inside `Get Articles` action.
+  - `extra`: This is a dictionary that contains facet-based filter parameters. Parameters ending with `[]` can contain multiple values. You can refer to `extra` param inside `Get Results` action.
 
 
   - `plan`: A plan is a hash with multiple keys and values denoting types of customizations to be made to the article. Details on the various customization types and their keys and values are provided in `Customization types` section inside `POST Customize` action.
