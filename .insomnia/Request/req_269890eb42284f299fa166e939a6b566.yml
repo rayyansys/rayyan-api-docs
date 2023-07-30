@@ -1,0 +1,49 @@
+_id: req_269890eb42284f299fa166e939a6b566
+type: Request
+parentId: fld_4a309c10b7ae4963b8f7c5570d6f23fe
+modified: 1683465813280
+created: 1681918652143
+url: "{{ _.base_url }}/api/v1/fulltexts"
+name: Fulltexts
+description: |-
+  ### Fulltexts
+
+  This endpoint creates a fulltext on the backend.
+
+  It takes 5 arguments, passed through the request body inside `upload` params:
+
+  `s3_key`: The S3 URL pointing to the fulltext.  
+  `original_filename`: The original filename of the fulltext.
+  `article_id`: The article id for this fulltext  
+  `is_public`: should be false   
+  `review_id`: the review id the article belongs to   
+
+  A succesful request returns the created fulltext as JSON.
+method: POST
+body:
+  mimeType: application/json
+  text: >-
+    {
+    	"upload": {
+    		"s3_key": "{% response 'body', 'req_3a5cf8c800c241e1adc5e379037c9417', 'b64::L1Bvc3RSZXNwb25zZS9LZXk=::46b', 'never', 60 %}",
+    		"original_filename": "fulltext_file.pdf",
+    		"is_public": "false",
+    		"article_id": {{ _.article1_id }},
+    		"review_id": {{ _.review_id }}
+    	}
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication:
+  type: bearer
+  token: "{{ _.manual_token }}"
+metaSortKey: -1681918652143
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
