@@ -1,0 +1,37 @@
+_id: req_2b193752cad6487691cd5ce0aef044d5
+type: Request
+parentId: fld_80bc7ee1b14547dc860545b5af4878c5
+modified: 1690728058822
+created: 1687182078953
+url: "{{ _.base_url }}/api/v1/reviews/{{ _.review_id }}/customize_by_filter"
+name: Customize by filter
+description: >
+  This endpoint takes a filter parameter, which is applied to retrieve specific
+  review articles and apply a particular customization to them.
+
+
+  All the customization are done in a background job, so the return status will be `ok` which means that the customization job was enqueued successfully.
+
+
+  Params:
+
+
+  - `extra`: This is a dictionary that contains facet-based filter parameters. Parameters ending with `[]` can contain multiple values. You can refer to `extra` param inside `Get Results` action.
+
+
+  - `plan`: A plan is a hash with multiple keys and values denoting types of customizations to be made to the article. Details on the various customization types and their keys and values are provided in `Customization types` section inside `POST Customize` action.
+method: POST
+body: {}
+parameters: []
+headers: []
+authentication:
+  type: bearer
+  token: "{{ _.manual_token }}"
+metaSortKey: -1679174307047
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

@@ -1,0 +1,28 @@
+_id: req_d7f187f591f246ce83be60d534197775
+type: Request
+parentId: fld_80bc7ee1b14547dc860545b5af4878c5
+modified: 1687176772267
+created: 1685707216013
+url: "{{ _.base_url }}/api/v1/reviews/{{ _.review_id }}"
+name: Delete review
+description: "This endpoint marks the review as deleted, and totally deletes the
+  review after 30 days "
+method: DELETE
+body:
+  mimeType: multipart/form-data
+  params: []
+parameters: []
+headers:
+  - name: Content-Type
+    value: multipart/form-data
+authentication:
+  type: bearer
+  token: "{{ _.manual_token }}"
+metaSortKey: -1685707216013
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

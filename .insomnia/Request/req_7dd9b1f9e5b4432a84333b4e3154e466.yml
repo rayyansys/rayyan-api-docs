@@ -1,0 +1,23 @@
+_id: req_7dd9b1f9e5b4432a84333b4e3154e466
+type: Request
+parentId: fld_7b1c08288ccf49afa9faa9df50201645
+modified: 1687182927841
+created: 1685494556448
+url: "{{ _.base_url }}/api/v1/teams"
+name: List Teams
+description: List all current user's teams categorized his roles inside these teams.
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication:
+  type: bearer
+  token: "{{ _.manual_token }}"
+metaSortKey: -1685494556448
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

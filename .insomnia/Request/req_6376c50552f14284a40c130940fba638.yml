@@ -1,17 +1,30 @@
 _id: req_6376c50552f14284a40c130940fba638
 type: Request
 parentId: fld_80bc7ee1b14547dc860545b5af4878c5
-modified: 1681905976022
+modified: 1689252817302
 created: 1643841355063
 url: "{{ _.base_url }}/api/v1/reviews"
 name: Reviews
 description: >
-  This endpoint lists all active (not archived) reviews the logged in user has
-  write access to. In this sense, it lists the following:
+  This endpoint lists all active or archived (depends on the `archive_state`
+  param) reviews the logged in user has write access to. In this sense, it lists
+  the following:
 
   1. `owned_reviews`: owned reviews
 
   1. `collab_reviews`: collaboration reviews
+
+
+  Params:
+
+  - `archive_state` when:  
+    - `live` or `nil`, the endpoint will return the live reviews.
+  	- `archived`, the endpoint will return the archived reviews.
+
+  - `page`: Pagination param, when:
+  	- `page` value is greater than `0`, the endpoint returns the specified page with page's length is `10`
+  	- `page` is left blank and the `archive_state` is `live`, the endpoint will return all live reviews.
+  	- `page` is left blank and the `archive_state` is `archived`, the endpoint will return the first page of archived reviews.  
 
 
   All review fields are straightforward to understand. There are three fields that worth explaining. Clients should keep track of changes in the values of these fields and take appropriate action if any one changes:
@@ -22,9 +35,17 @@ description: >
 
   1. `labels_etag`: Same as above but for user labels and exclusion reasons. It applies to the user labels or exclusion reasons facets
 method: GET
-body: {}
+body:
+  mimeType: multipart/form-data
+  params:
+    - id: pair_f9275a5c2ecd43efa4b6d0dd8020b635
+      name: archive_state
+      value: archived
+      description: ""
 parameters: []
-headers: []
+headers:
+  - name: Content-Type
+    value: multipart/form-data
 authentication:
   type: bearer
   token: "{{ _.manual_token }}"

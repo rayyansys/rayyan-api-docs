@@ -1,14 +1,17 @@
 _id: req_4365b66e639643ab858da38f5f615021
 type: Request
 parentId: fld_aa9ebfcfd51d4d80a9fee93724f1bc03
-modified: 1679321365233
+modified: 1689252852995
 created: 1679267916120
 url: "{{ _.base_url }}/admin/teams/{{ _.team_id }}.json"
 name: Show Team
-description: |-
-  This endpoint fetches the team data.
+description: >-
+  This endpoint fetches the team data, including team members categorized by
+  roles.
+
 
   params:
+
   id: [Integer] id of the requested team
 method: GET
 body: {}
