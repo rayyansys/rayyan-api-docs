@@ -1,0 +1,44 @@
+_id: req_a5887a245a1443778789147c1c2cd39b
+type: Request
+parentId: fld_80bc7ee1b14547dc860545b5af4878c5
+modified: 1692719225702
+created: 1692534445531
+url: "{{ _.base_url }}/api/v1/reviews/{{ _.review_id }}"
+name: Update
+description: >-
+  Use this endpoint to update metadata information about a review.
+
+
+  Allowed attributes (title, :description, metadata_attributes: [:research_field, :review_type, :review_domain])
+method: PUT
+body:
+  mimeType: application/json
+  text: |-
+    {
+    	"review": {
+    		"title": "Updated Test Review for Creation",
+    		"description": "Updated Review for testing the review creation API.",
+    		"metadata_attributes": {
+    			"research_question": "Updated research question",
+    			"research_question_type": "Updated research question type",
+    			"research_field": "Updated medicine and human health",
+    			"review_type": "Updated systematic review",
+    			"review_domain": "Updated biomedical"
+    		}
+    	}
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication:
+  type: bearer
+  token: "{{ _.manual_token }}"
+metaSortKey: -1692534445531
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
