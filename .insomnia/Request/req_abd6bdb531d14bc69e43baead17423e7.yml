@@ -1,34 +1,87 @@
 _id: req_abd6bdb531d14bc69e43baead17423e7
 type: Request
 parentId: fld_aa9ebfcfd51d4d80a9fee93724f1bc03
-modified: 1679321498304
+modified: 1695533347763
 created: 1679266885792
 url: "{{ _.base_url }}/admin/teams/{{ _.team_id }}.json"
 name: Update Team
-description: |-
+description: >
   This endpoint updates the team
 
+
   params:
+
   id: (required) [Integer] id of the team
-  name: (required) [String] name of the team
-  capacity: (required)
+
+  name: [String] name of the team
+
+  capacity: [Integer] Capacity of the team
+
+  admin_ids: [Array(Integer)] array of admins of the team. Used to remove admins. if no admins need to be removed, don't send it or send all the admins ids. Adding new id will not have any affect.
+
+  collaborator_ids: [Array(Integer)] array of collaborators of the team. Used to remove collaborators. if no collaborators need to be removed, don't send it or send all the collaborators ids. Adding new id will not have any affect.
+
+  viewer_ids: [Array(Integer)] array of viewers of the team. Used to remove viewers. If no viewers need to be removed, don't send it or send all the viewers ids. Adding new id will not have any affect.
+
+  new_admin_emails: [String] comma-separated string (ex. "admin@email.com,admin2@emailcom"). Used to add/invite admins to a team. If memeber already exists will return error. Dont't send if no new admins are invited.
+
+  new_collaborator_emails: [String] comma-separated string (ex. "collaborator@email.com,collaborator2@emailcom"). Used to add/invite collaborators to a team. If memeber already exists will return error. Dont't send if no new collaborators are invited.
+
+  new_viewer_emails: [String] comma-separated string (ex. "viewer@email.com,viewer2@emailcom"). Used to add/invite viewers to a team. If memeber already exists will return error. Dont't send if no new viewers are invited.
+
+
+
+  To update a member role, send the old role ids params ({role}_ids) without the member id and send the member email in the new role email param (new_{role}_emails).
+
+  example:
+
+  Upgrade member (id:1, email: member@example.com) from collaborator to admin.
+
+  collaborators_id: [(all ids of collaborator you want to keep without the member id)],
+
+  new_admin_emails: "member@example.com,(all new collaborators email you want to add)"
 method: PUT
 body: {}
 parameters:
-  - id: pair_0240956335d44b5eaa9d449fcf5f9e82
-    name: team[name]
-    value: "Team new name "
-    description: ""
+  - name: team[name]
+    value: new team name
+    id: pair_e2c15575953642359a4a36bc87f0a86c
+  - name: team[capacity]
+    value: "111"
+    id: pair_7da091f923d144059f7972a9fe47f0a9
+  - name: team[new_admin_emails]
+    value: admin@example.com
+    id: pair_d0ddb73e57cd4e39a91d1c0bc74e8f67
+    disabled: true
+  - name: team[new_collaborator_emails]
+    value: new_callorator_email@gmail.com,new_callorator_email2@gmail.com
+    id: pair_051d018f7c714e38b085ecf0375c7313
     disabled: false
-  - id: pair_5105bcc47e914ca08a2efa90c9e8646b
-    name: team[capacity]
-    value: "4"
+  - name: team[new_admin_emails]
+    value: new_callorator_email2@gmail.com
+    id: pair_978f6034529c4e2d96080a793b4d2f42
+    disabled: true
+  - name: team[new_viewer_emails]
+    value: viewer@example.com
+    id: pair_d1f05ea43d694ee4aa0cc5708a17ef33
+    disabled: true
+  - name: team[admin_ids][]
+    value: "[]"
+    id: pair_f22fccee0bd74c3ab66ea37748853dad
+    disabled: true
+  - name: team[collaborator_ids][]
+    value: "[601]"
+    id: pair_854d77d1db3f48b2a5bb6e0a61c41c53
+    disabled: true
+  - name: team[viewer_ids][]
+    value: "[]"
+    id: pair_426f565b85684e4988fc9875af1bd162
+    disabled: true
+headers:
+  - id: pair_beb7e77e7014420c986b4ddca26e783b
+    name: ""
+    value: ""
     description: ""
-  - id: pair_060e3f39f5a145ac84101ada8f0428ca
-    name: team[new_collaborator_emails]
-    value: collaborator1@example,collaborator2@example.com
-    description: ""
-headers: []
 authentication:
   type: bearer
   token: "{{ _.manual_token }}"
